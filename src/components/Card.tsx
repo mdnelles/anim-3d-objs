@@ -10,16 +10,19 @@ const size: number = 200;
 interface CardProps {
    anim1?: string;
    anim2?: string;
+   width?: number | string;
+   height?: number | string;
 }
 
 const Card = (props: CardProps) => {
-   const { anim1 = "", anim2 = "" } = props;
+   const { anim1 = "", anim2 = "", width = 5, height = 5 } = props;
    console.log("App.tsx > anim1 = " + anim1);
    return (
       <SceneStyle size={size}>
-         sss
          <AnimWrap duration={5} iterationCount='infinite' animName={anim1}>
-            <Face />
+            <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
+               <Face />
+            </AnimWrap>
          </AnimWrap>
       </SceneStyle>
    );

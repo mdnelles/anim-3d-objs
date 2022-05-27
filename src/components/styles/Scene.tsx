@@ -7,19 +7,16 @@ interface SceneStyleProps {
 
 export const SceneStyle = (props: SceneStyleProps) => {
    const { size = 0, children = "" } = props;
-   console.log("---size: " + size);
 
    const SceneStyleDiv: any = styled.div`
       width: ${size}px;
       height: ${size}px;
       perspective: 600px;
       perspective-origin: 50% 50%;
-      border: "3px solid #900";
-      background-color: "pink";
+      border: 1px solid #900;
       padding: 5px;
    `;
-   console.log("SceneStyleDiv");
-   console.log(SceneStyleDiv);
+
    return (
       <>
          <SceneStyleDiv>{children}</SceneStyleDiv>
