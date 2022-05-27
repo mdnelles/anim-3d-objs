@@ -27,8 +27,8 @@ export const Face = (props: FaceProps) => {
    } = props;
    const Specs = styled.div`
       position: absolute;
-      width: 100px;
-      height: 100px;
+      width: ${width}px;
+      height: ${height}px;
       background-color: ${bgc};
       border: #333;
       transform: rotate3d(${x}, ${y}, ${z}, ${deg}deg) translateZ(${tranz}px);

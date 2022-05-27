@@ -10,7 +10,6 @@ const size: number = 200;
 function App() {
    return (
       <div style={{ padding: 200 }}>
-         Card
          <Card anim1='X360' anim2='Y360' width={200} height={200} />
       </div>
    );
