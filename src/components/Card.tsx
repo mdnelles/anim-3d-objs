@@ -17,7 +17,6 @@ const Card = (props: CardProps) => {
    console.log("App.tsx > anim1 = " + anim1);
    return (
       <SceneStyle size={size}>
-         sss
          <AnimWrap duration={5} iterationCount='infinite' animName={anim1}>
             <Face />
          </AnimWrap>

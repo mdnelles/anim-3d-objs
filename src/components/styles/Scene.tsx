@@ -14,8 +14,8 @@ export const SceneStyle = (props: SceneStyleProps) => {
       height: ${size}px;
       perspective: 600px;
       perspective-origin: 50% 50%;
-      border: "3px solid #900";
-      background-color: "pink";
+      border: 3px solid #900;
+      background-color: pink;
       padding: 5px;
    `;
    console.log("SceneStyleDiv");

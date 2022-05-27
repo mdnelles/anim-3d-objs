@@ -41,12 +41,13 @@ export const AnimWrap = (props: AnimStylesProps) => {
       fillMode = "forward",
       children = "",
    } = props;
+   /*
    const AnimWrapDiv: any = styled.div`
       width: 100%;
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      border: "3px dashed #0f0";
+      border: 3px dashed #0f0;
       background-color: #cccc99;
       -webkit-animation-duration: ${duration}s;
       animation-duration: ${duration}s;
@@ -57,5 +58,24 @@ export const AnimWrap = (props: AnimStylesProps) => {
       -webkit-animation-fill-mode: ${fillMode};
       animation-fill-mode: ${fillMode};
    `;
+   */
+   const AnimWrapDiv: any = styled.div`
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      border: 3px dashed #0f0;
+      background-color: #cccc99;
+      -webkit-animation-duration: ${duration}s;
+      animation-duration: ${duration}s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-name: spinX;
+      animation-name: spinX;
+      -webkit-animation-fill-mode: forward;
+      animation-fill-mode: forward;
+   `;
+   console.log("AnimWrapDiv");
+   console.log(AnimWrapDiv);
    return <AnimWrapDiv>{children}</AnimWrapDiv>;
 };
