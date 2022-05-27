@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import "../App.css";
-import { AnimWrap } from "./AnimWrap";
-//import { CubeFace } from "./components";
-
 import { Face } from "./Face";
-import { SceneStyle } from "./styles/Obj.styles";
+import { AnimWrap } from "./styles/AnimWrap";
+import { SceneStyle } from "./styles/Scene";
 
 const size: number = 200;
 
@@ -20,10 +17,9 @@ const Card = (props: CardProps) => {
    console.log("App.tsx > anim1 = " + anim1);
    return (
       <SceneStyle size={size}>
-         <AnimWrap animName={anim1}>
-            <AnimWrap animName={anim2}>
-               <Face />
-            </AnimWrap>
+         sss
+         <AnimWrap duration={5} iterationCount='infinite' animName={anim1}>
+            <Face />
          </AnimWrap>
       </SceneStyle>
    );

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 //import * as STYLES from "./styles/Anims.styles";
-import { X360 } from "./styles/Anims.styles";
 
 interface AnimWrapProps {
    children?: any;
@@ -31,9 +30,5 @@ export const AnimWrap = (props: AnimWrapProps) => {
    //  animation-duration: ${animDuration}s;
    //  animation-iteration-count: ${animCount};
 
-   return (
-      <X360>
-         <AnimWrapStyle>{children}</AnimWrapStyle>
-      </X360>
-   );
+   return <AnimWrapStyle>{children}</AnimWrapStyle>;
 };
