@@ -21,18 +21,11 @@ const Card = (props: CardProps) => {
       <SceneStyle size={size}>
          <AnimWrap duration={5} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
-               <Face />
+               <Face width={width} height={height} />
             </AnimWrap>
          </AnimWrap>
       </SceneStyle>
    );
 };
-/*
-         <div className={anim1} style={{ width: size, height: size }}>
-            <div className={anim2} style={{ width: size, height: size }}>
-               <Face />
-            </div>
-         </div>
-*/
 
 export default Card;
