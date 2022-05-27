@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface FaceProps {
-   id?: string | number;
+   id?: string;
    x?: number | string;
    y?: number | string;
    z?: number | string;
@@ -19,18 +19,20 @@ export const Face = (props: FaceProps) => {
       y = 0,
       z = 0,
       deg = 0,
+      id,
       children = "",
-      tranz = 0,
       bgc = "#ddd",
       width = 5,
       height = 5,
+      tranz = width,
    } = props;
+   console.log("ID: " + id + "  >> deg = " + deg);
    const Specs = styled.div`
       position: absolute;
       width: ${width}px;
       height: ${height}px;
       background-color: ${bgc};
-      border: #333;
+      border: 1px dashed #0f0;
       transform: rotate3d(${x}, ${y}, ${z}, ${deg}deg) translateZ(${tranz}px);
       backface-visibility: visible;
    `;

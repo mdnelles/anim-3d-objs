@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import "../App.css";
 import { Face } from "./Face";
-import FaceLeft from "./FaceLeft";
+import FaceLeft from "./Faces/FaceLeft";
 import FaceRight from "./FaceRight";
 
 export const SceneStyle: any = styled.div`
