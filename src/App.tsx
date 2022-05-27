@@ -10,7 +10,8 @@ const size: number = 200;
 function App() {
    return (
       <div style={{ padding: 200 }}>
-         <Box anim1='x360' anim2='yy360' />
+         Card
+         <Card anim1='X360' anim2='YY360' />
       </div>
    );
 }
