@@ -31,6 +31,7 @@ interface AnimStylesProps {
    animName?: string;
    fillMode?: string;
    children?: any;
+   borderColor?: string;
 }
 
 export const AnimWrap = (props: AnimStylesProps) => {
@@ -40,40 +41,23 @@ export const AnimWrap = (props: AnimStylesProps) => {
       animName = "noAnim",
       fillMode = "forward",
       children = "",
+      borderColor = "",
    } = props;
-   /*
+   console.log("animName: " + animName);
    const AnimWrapDiv: any = styled.div`
       width: 100%;
       height: 100%;
       position: relative;
+      border: 1px dotted ${borderColor};
       transform-style: preserve-3d;
-      border: 3px dashed #0f0;
-      background-color: #cccc99;
       -webkit-animation-duration: ${duration}s;
       animation-duration: ${duration}s;
       -webkit-animation-iteration-count: ${iterationCount};
       animation-iteration-count: ${iterationCount};
-      -webkit-animation-name: ${animName};
-      animation-name: ${animName};
+      -webkit-animation-name: ${eval(animName)};
+      animation-name: ${eval(animName)};
       -webkit-animation-fill-mode: ${fillMode};
       animation-fill-mode: ${fillMode};
-   `;
-   */
-   const AnimWrapDiv: any = styled.div`
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      border: 3px dashed #0f0;
-      background-color: #cccc99;
-      -webkit-animation-duration: ${duration}s;
-      animation-duration: ${duration}s;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: spinX;
-      animation-name: spinX;
-      -webkit-animation-fill-mode: forward;
-      animation-fill-mode: forward;
    `;
    console.log("AnimWrapDiv");
    console.log(AnimWrapDiv);

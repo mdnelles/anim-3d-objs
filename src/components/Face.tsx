@@ -9,6 +9,8 @@ interface FaceProps {
    tranz?: number | string;
    deg?: number | string;
    children?: any;
+   width?: number | string;
+   height?: number | string;
 }
 
 export const Face = (props: FaceProps) => {
@@ -20,6 +22,8 @@ export const Face = (props: FaceProps) => {
       children = "",
       tranz = 0,
       bgc = "#ddd",
+      width = 5,
+      height = 5,
    } = props;
    const Specs = styled.div`
       position: absolute;
