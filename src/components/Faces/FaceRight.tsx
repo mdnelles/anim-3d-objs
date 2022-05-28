@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-interface FaceLeftProps {
+interface FaceRightProps {
    bfv?: string;
    bgc?: string;
    border?: string;
@@ -20,28 +19,19 @@ interface FaceLeftProps {
    textAlign?: string;
    top?: number;
    tranz?: number | string;
-   width?: number;
+   width?: number | string;
 }
 
-const FaceLeft = (props: FaceLeftProps) => {
+const FaceRight = (props: FaceRightProps) => {
    const {
       bfv = "visible",
       bgc = "",
       border = "0px solid #fff",
       children,
-      fontSize = 10,
       height = 10,
       id = 0,
-      imgSrc = "",
-      left = 0,
-      lineHeight = 1,
-      margin = 0,
       opacity = 1,
-      padding = 20,
       position = "absolute",
-      style = "",
-      textAlign = "left",
-      top = 0,
       tranz = 80,
       width = 10,
    } = props;
@@ -49,20 +39,12 @@ const FaceLeft = (props: FaceLeftProps) => {
    const Specs: any = styled.div`
       opacity: ${opacity};
       position: ${position};
-      font-size: ${fontSize};
-      background-image: url("${imgSrc}");
-      left: ${left};
-      line-height: ${lineHeight};
-      margin: ${margin};
-      padding: ${padding};
-      text-align: ${textAlign};
       width: ${width}px;
       height: ${height}px;
       background-color: ${bgc};
       border: ${border};
       backface-visibility: ${bfv};
-      transform: rotateY(-90deg) translateZ(${tranz}px);
-      top: ${top};
+      transform: rotateY(90deg) translateZ(${tranz}px);
    `;
    return (
       <>
@@ -71,4 +53,4 @@ const FaceLeft = (props: FaceLeftProps) => {
    );
 };
 
-export default FaceLeft;
+export default FaceRight;
