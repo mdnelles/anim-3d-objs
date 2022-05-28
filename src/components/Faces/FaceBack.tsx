@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-interface FaceLeftProps {
+interface FaceBackProps {
    bfv?: string;
    bgc?: string;
    border?: string;
@@ -20,10 +19,10 @@ interface FaceLeftProps {
    textAlign?: string;
    top?: number;
    tranz?: number | string;
-   width?: number;
+   width?: number | string;
 }
 
-const FaceLeft = (props: FaceLeftProps) => {
+const FaceBack = (props: FaceBackProps) => {
    const {
       bfv = "visible",
       bgc = "",
@@ -61,7 +60,7 @@ const FaceLeft = (props: FaceLeftProps) => {
       background-color: ${bgc};
       border: ${border};
       backface-visibility: ${bfv};
-      transform: rotateY(-90deg) translateZ(${tranz}px);
+      transform: rotateY(180deg) translateZ(${tranz}px);
       top: ${top};
    `;
    return (
@@ -71,4 +70,4 @@ const FaceLeft = (props: FaceLeftProps) => {
    );
 };
 
-export default FaceLeft;
+export default FaceBack;
