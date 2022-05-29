@@ -32,7 +32,7 @@ const Cuboid = (props: CubeProps) => {
       fontSize: number | string = 20,
       textAlign: string | any = "center";
    return (
-      <SceneStyle size={width}>
+      <SceneStyle width={width} height={height}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <CubeWrapper>
