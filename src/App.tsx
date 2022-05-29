@@ -8,8 +8,8 @@ function App() {
          <Cuboid
             anim1='X360'
             anim2='Y360'
-            width={100}
-            height={250}
+            width={10}
+            height={300}
             border='1px solid #fff'
          />
       </div>

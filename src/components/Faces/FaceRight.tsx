@@ -37,7 +37,7 @@ const FaceRight = (props: FaceRightProps) => {
    } = props;
 
    if (height > width) {
-      tranz = +height / 2;
+      tranz = -(+height / 2 - +width);
       width = +height;
    } else if (width < height) {
       tranz = +height / 2;
