@@ -8,11 +8,10 @@ import FaceBottom from "./Faces/FaceBottom";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
 
-const size: number = 200;
-
 interface CubeProps {
    anim1?: string;
    anim2?: string;
+   border?: string;
    width?: number;
    height?: number | string;
 }
@@ -25,15 +24,15 @@ const CubeWrapper = styled.div`
 `;
 
 const Cube = (props: CubeProps) => {
-   const { anim1 = "", anim2 = "", width = 5, height = 5 } = props;
-   console.log("App.tsx > anim1 = " + anim1);
+   const { anim1 = "", anim2 = "", width = 5, height = 5, border = "" } = props;
+   let tranz: number = +height / 2;
    const color = "#FFF",
-      fontWeight = 800,
-      lineHeight = 9,
-      fontSize = 20,
-      textAlign = "center";
+      fontWeight: number | string = 800,
+      lineHeight: number = 5,
+      fontSize: number | string = 20,
+      textAlign: string | any = "center";
    return (
-      <SceneStyle size={size}>
+      <SceneStyle size={width}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <CubeWrapper>
@@ -41,9 +40,10 @@ const Cube = (props: CubeProps) => {
                      width={width}
                      height={height}
                      id='right'
-                     tranz={100}
+                     tranz={tranz}
                      bgc='blue'
                      opacity={0.5}
+                     border={border}
                   >
                      <div
                         style={{
@@ -61,9 +61,10 @@ const Cube = (props: CubeProps) => {
                      width={width}
                      height={height}
                      id='left'
-                     tranz={100}
-                     bgc='yellow'
+                     tranz={tranz}
+                     bgc='black'
                      opacity={0.5}
+                     border={border}
                   >
                      <div
                         style={{
@@ -81,9 +82,10 @@ const Cube = (props: CubeProps) => {
                      width={width}
                      height={height}
                      id='front'
-                     bgc='pink'
-                     tranz={100}
+                     bgc='maroon'
+                     tranz={tranz}
                      opacity={0.5}
+                     border={border}
                   >
                      <div
                         style={{
@@ -101,9 +103,10 @@ const Cube = (props: CubeProps) => {
                      width={width}
                      height={height}
                      id='top'
-                     tranz={100}
+                     tranz={tranz}
                      bgc='green'
                      opacity={0.5}
+                     border={border}
                   >
                      <div
                         style={{
@@ -121,9 +124,10 @@ const Cube = (props: CubeProps) => {
                      width={width}
                      height={height}
                      id='top'
-                     tranz={100}
+                     tranz={tranz}
                      bgc='red'
                      opacity={0.5}
+                     border={border}
                   >
                      <div
                         style={{
@@ -141,9 +145,10 @@ const Cube = (props: CubeProps) => {
                      width={width}
                      height={height}
                      id='top'
-                     tranz={100}
+                     tranz={tranz}
                      bgc='purple'
                      opacity={0.5}
+                     border={border}
                   >
                      <div
                         style={{
