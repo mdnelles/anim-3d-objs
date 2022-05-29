@@ -12,7 +12,7 @@ interface CubeProps {
    anim1?: string;
    anim2?: string;
    border?: string;
-   width?: number | any;
+   width?: number;
    height?: number | string;
 }
 
@@ -23,7 +23,7 @@ const CubeWrapper = styled.div`
    transform-style: preserve-3d;
 `;
 
-const Cube = (props: CubeProps) => {
+const Cuboid = (props: CubeProps) => {
    const { anim1 = "", anim2 = "", width = 5, height = 5, border = "" } = props;
    let tranz: number = +height / 2;
    const color = "#FFF",
@@ -32,7 +32,7 @@ const Cube = (props: CubeProps) => {
       fontSize: number | string = 20,
       textAlign: string | any = "center";
    return (
-      <SceneStyle width={width} height={height}>
+      <SceneStyle size={width}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <CubeWrapper>
@@ -169,4 +169,4 @@ const Cube = (props: CubeProps) => {
    );
 };
 
-export default Cube;
+export default Cuboid;

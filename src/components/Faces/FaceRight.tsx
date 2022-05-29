@@ -23,7 +23,7 @@ interface FaceRightProps {
 }
 
 const FaceRight = (props: FaceRightProps) => {
-   const {
+   let {
       bfv = "visible",
       bgc = "",
       border = "0px solid #fff",
@@ -35,6 +35,14 @@ const FaceRight = (props: FaceRightProps) => {
       tranz = 80,
       width = 10,
    } = props;
+
+   if (height > width) {
+      tranz = +height / 2;
+      width = +height;
+   } else if (width < height) {
+      tranz = +height / 2;
+      height = +width;
+   }
 
    const Specs: any = styled.div`
       opacity: ${opacity};
