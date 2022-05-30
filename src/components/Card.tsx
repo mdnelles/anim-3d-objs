@@ -5,8 +5,6 @@ import { Face } from "./Face";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
 
-const size: number = 200;
-
 interface CardProps {
    anim1?: string;
    anim2?: string;
@@ -15,10 +13,10 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => {
-   const { anim1 = "", anim2 = "", width = 5, height = 5 } = props;
+   const { anim1 = "", anim2 = "", width = 100, height = 200 } = props;
    console.log("App.tsx > anim1 = " + anim1);
    return (
-      <SceneStyle size={size}>
+      <SceneStyle width={width} height={height}>
          <AnimWrap duration={5} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <Face width={width} height={height} />
