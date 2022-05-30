@@ -5,56 +5,52 @@ interface FaceBackProps {
    bgc?: string;
    border?: string;
    children?: string | any;
-   fontSize?: number | string;
+   depth?: number | any;
    height?: number | string;
    id?: string | number;
-   imgSrc?: string;
    left?: number;
-   lineHeight?: number;
    margin?: number | string;
    opacity?: number;
    padding?: number | string;
    position?: number;
    style?: string;
-   textAlign?: string;
    top?: number;
    tranz?: number | string;
    width?: number | string;
 }
 
 const FaceBack = (props: FaceBackProps) => {
-   const {
+   let {
       bfv = "visible",
       bgc = "",
       border = "0px solid #fff",
       children,
-      fontSize = 10,
+      depth = 10,
       height = 10,
       id = 0,
-      imgSrc = "",
       left = 0,
-      lineHeight = 1,
       margin = 0,
       opacity = 1,
       padding = 20,
       position = "absolute",
       style = "",
-      textAlign = "left",
       top = 0,
       tranz = 80,
       width = 10,
    } = props;
 
+   if (height > width && depth) {
+      tranz = +depth / 2;
+   } else if (width > height && depth) {
+      tranz = +height / 2;
+   }
+
    const Specs: any = styled.div`
       opacity: ${opacity};
       position: ${position};
-      font-size: ${fontSize};
-      background-image: url("${imgSrc}");
       left: ${left};
-      line-height: ${lineHeight};
       margin: ${margin};
       padding: ${padding};
-      text-align: ${textAlign};
       width: ${width}px;
       height: ${height}px;
       background-color: ${bgc};

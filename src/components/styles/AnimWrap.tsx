@@ -43,7 +43,7 @@ export const AnimWrap = (props: AnimStylesProps) => {
       children = "",
       borderColor = "",
    } = props;
-   console.log("animName: " + animName);
+
    const AnimWrapDiv: any = styled.div`
       width: 100%;
       height: 100%;
@@ -59,7 +59,6 @@ export const AnimWrap = (props: AnimStylesProps) => {
       -webkit-animation-fill-mode: ${fillMode};
       animation-fill-mode: ${fillMode};
    `;
-   console.log("AnimWrapDiv");
-   console.log(AnimWrapDiv);
+
    return <AnimWrapDiv>{children}</AnimWrapDiv>;
 };

@@ -6,6 +6,7 @@ interface FaceFrontProps {
    bgc?: string;
    border?: string;
    children?: string | any;
+   depth?: number | any;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -24,35 +25,35 @@ interface FaceFrontProps {
 }
 
 const FaceFront = (props: FaceFrontProps) => {
-   const {
+   let {
       bfv = "visible",
       bgc = "",
       border = "0px solid #fff",
       children,
-      fontSize = 10,
+      depth = 10,
       height = 10,
       id = 0,
-      imgSrc = "",
       left = 0,
-      lineHeight = 1,
       margin = 0,
       opacity = 1,
       padding = 20,
       position = "relative",
-      style = "",
       textAlign = "left",
       top = 0,
       tranz = 80,
       width = 10,
    } = props;
 
+   if (height > width && depth) {
+      tranz = +depth / 2;
+   } else if (width > height && depth) {
+      tranz = +height / 2;
+   }
+
    const Specs: any = styled.div`
       opacity: ${opacity};
       position: ${position};
-      font-size: ${fontSize};
-      background-image: url("${imgSrc}");
       left: ${left};
-      line-height: ${lineHeight};
       margin: ${margin};
       padding: ${padding};
       text-align: ${textAlign};
