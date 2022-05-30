@@ -47,7 +47,7 @@ const FaceFront = (props: FaceFrontProps) => {
    if (height > width && depth) {
       tranz = +depth / 2;
    } else if (width > height && depth) {
-      tranz = +height / 2;
+      tranz = +depth / 2;
    }
 
    const Specs: any = styled.div`
