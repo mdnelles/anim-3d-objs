@@ -6,6 +6,7 @@ interface FaceLeftProps {
    bgc?: string;
    border?: string;
    children?: string | any;
+   depth?: number;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -24,11 +25,12 @@ interface FaceLeftProps {
 }
 
 const FaceLeft = (props: FaceLeftProps) => {
-   const {
+   let {
       bfv = "visible",
       bgc = "",
       border = "0px solid #fff",
       children,
+      depth = 10,
       height = 10,
       id = 0,
       opacity = 1,
@@ -36,6 +38,14 @@ const FaceLeft = (props: FaceLeftProps) => {
       tranz = 80,
       width = 10,
    } = props;
+
+   if (height > width && depth) {
+      tranz = +depth / 2;
+      height = +depth;
+   } else if (width > height && depth) {
+      tranz = +depth / 2;
+      height = +depth;
+   }
 
    const Specs: any = styled.div`
       opacity: ${opacity};

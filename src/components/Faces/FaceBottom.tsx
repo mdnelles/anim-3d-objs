@@ -5,6 +5,7 @@ interface FaceBottomProps {
    bgc?: string;
    border?: string;
    children?: string | any;
+   depth?: number;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -18,16 +19,17 @@ interface FaceBottomProps {
    style?: string;
    textAlign?: string;
    top?: number;
-   tranz?: number | string;
+   tranz?: number | any;
    width?: number | string;
 }
 
 const FaceBottom = (props: FaceBottomProps) => {
-   const {
+   let {
       bfv = "visible",
       bgc = "",
       border = "0px solid #fff",
       children,
+      depth = 10,
       height = 10,
       id = 0,
       opacity = 1,
@@ -35,6 +37,14 @@ const FaceBottom = (props: FaceBottomProps) => {
       tranz = 80,
       width = 10,
    } = props;
+
+   if (height > width && depth) {
+      tranz = +height - +depth / 2;
+      height = +depth;
+   } else if (width > height && depth) {
+      tranz = +height - +depth / 2;
+      height = +depth;
+   }
 
    const Specs: any = styled.div`
       opacity: ${opacity};

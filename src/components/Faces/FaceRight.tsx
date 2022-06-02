@@ -5,6 +5,7 @@ interface FaceRightProps {
    bgc?: string;
    border?: string;
    children?: string | any;
+   depth?: number | any;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -28,6 +29,7 @@ const FaceRight = (props: FaceRightProps) => {
       bgc = "",
       border = "0px solid #fff",
       children,
+      depth = 10,
       height = 10,
       id = 0,
       opacity = 1,
@@ -36,12 +38,18 @@ const FaceRight = (props: FaceRightProps) => {
       width = 10,
    } = props;
 
-   if (height > width) {
+   if (height > width && !depth) {
       tranz = -(+height / 2 - +width);
       width = +height;
-   } else if (width < height) {
+   } else if (width > height && !depth) {
       tranz = +height / 2;
       height = +width;
+   } else if (height > width && depth) {
+      tranz = +width - +depth / 2;
+      width = +depth;
+   } else if (width > height && depth) {
+      tranz = +width - +depth / 2;
+      width = +depth;
    }
 
    const Specs: any = styled.div`
