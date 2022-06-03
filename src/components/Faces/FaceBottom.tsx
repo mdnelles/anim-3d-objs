@@ -38,13 +38,8 @@ const FaceBottom = (props: FaceBottomProps) => {
       width = 10,
    } = props;
 
-   if (height > width && depth) {
-      tranz = +height - +depth / 2;
-      height = +depth;
-   } else if (width > height && depth) {
-      tranz = +height - +depth / 2;
-      height = +depth;
-   }
+   tranz = +height - +depth / 2;
+   height = +depth;
 
    const Specs: any = styled.div`
       opacity: ${opacity};

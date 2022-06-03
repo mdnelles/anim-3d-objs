@@ -1,10 +1,4 @@
 import styled from "styled-components";
-import FaceRight from "./Faces/FaceRight";
-import FaceFront from "./Faces/FaceFront";
-import FaceLeft from "./Faces/FaceLeft";
-import FaceTop from "./Faces/FaceTop";
-import FaceBack from "./Faces/FaceBack";
-import FaceBottom from "./Faces/FaceBottom";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
 import { FaceControl } from "./Faces/FaceControl";
@@ -58,7 +52,14 @@ const Slab = (props: SlabProps) => {
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
-   const { DoFaceRight, DoFaceLeft, DoFaceFront, DoFaceTop } = FaceControl(tmp);
+   const {
+      DoFaceRight,
+      DoFaceLeft,
+      DoFaceFront,
+      DoFaceTop,
+      DoFaceBack,
+      DoFaceBottom,
+   } = FaceControl(tmp);
    return (
       <SceneStyle width={width} height={height}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
@@ -68,51 +69,8 @@ const Slab = (props: SlabProps) => {
                   {DoFaceLeft()}
                   {DoFaceFront()}
                   {DoFaceTop()}
-
-                  <FaceBack
-                     width={width}
-                     height={height}
-                     depth={depth}
-                     id='top'
-                     tranz={tranz}
-                     bgc='red'
-                     opacity={0.5}
-                     border={border}
-                  >
-                     <div
-                        style={{
-                           color,
-                           fontWeight,
-                           lineHeight,
-                           fontSize,
-                           textAlign,
-                        }}
-                     >
-                        BACK
-                     </div>
-                  </FaceBack>
-                  <FaceBottom
-                     width={width}
-                     height={height}
-                     depth={depth}
-                     id='top'
-                     tranz={tranz}
-                     bgc='purple'
-                     opacity={0.5}
-                     border={border}
-                  >
-                     <div
-                        style={{
-                           color,
-                           fontWeight,
-                           lineHeight,
-                           fontSize,
-                           textAlign,
-                        }}
-                     >
-                        BOTTOM
-                     </div>
-                  </FaceBottom>
+                  {DoFaceBack()}
+                  {DoFaceBottom()}
                </SlabWrapper>
             </AnimWrap>
          </AnimWrap>

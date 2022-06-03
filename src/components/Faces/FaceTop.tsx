@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-interface FaceLeftProps {
+interface FaceProps {
    bfv?: string;
    bgc?: string;
    border?: string;
@@ -24,7 +24,7 @@ interface FaceLeftProps {
    width?: number;
 }
 
-const FaceLeft = (props: FaceLeftProps) => {
+const FaceTop = (props: FaceProps) => {
    let {
       bfv = "visible",
       bgc = "",
@@ -39,13 +39,8 @@ const FaceLeft = (props: FaceLeftProps) => {
       width = 10,
    } = props;
 
-   if (height > width && depth) {
-      tranz = +depth / 2;
-      height = +depth;
-   } else if (width > height && depth) {
-      tranz = +depth / 2;
-      height = +depth;
-   }
+   tranz = +depth / 2 || 80;
+   height = +depth;
 
    const Specs: any = styled.div`
       opacity: ${opacity};
@@ -65,4 +60,4 @@ const FaceLeft = (props: FaceLeftProps) => {
    );
 };
 
-export default FaceLeft;
+export default FaceTop;

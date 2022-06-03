@@ -1,3 +1,5 @@
+import FaceBack from "./FaceBack";
+import FaceBottom from "./FaceBottom";
 import FaceFront from "./FaceFront";
 import FaceLeft from "./FaceLeft";
 import FaceRight from "./FaceRight";
@@ -63,7 +65,36 @@ export const FaceControl = (props: FaceControlProps): any => {
          return <></>;
       }
    };
-
+   const DoFaceBack = (): any => {
+      if (!!faces && !!faces.back) {
+         return (
+            <FaceBack
+               width={width}
+               height={height}
+               depth={depth}
+               id='top'
+               tranz={tranz}
+               bgc='red'
+               opacity={0.5}
+               border={border}
+            >
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     lineHeight,
+                     fontSize,
+                     textAlign,
+                  }}
+               >
+                  BACK
+               </div>
+            </FaceBack>
+         );
+      } else {
+         return <></>;
+      }
+   };
    const DoFaceTop = (): any => {
       if (!!faces && !!faces.top) {
          return (
@@ -94,7 +125,36 @@ export const FaceControl = (props: FaceControlProps): any => {
          return <></>;
       }
    };
-
+   const DoFaceBottom = (): any => {
+      if (!!faces && !!faces.bottom) {
+         return (
+            <FaceBottom
+               width={width}
+               height={height}
+               depth={depth}
+               id='top'
+               tranz={tranz}
+               bgc='purple'
+               opacity={0.5}
+               border={border}
+            >
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     lineHeight,
+                     fontSize,
+                     textAlign,
+                  }}
+               >
+                  BOTTOM
+               </div>
+            </FaceBottom>
+         );
+      } else {
+         return <></>;
+      }
+   };
    const DoFaceRight = (): any => {
       if (!!faces && !!faces.right) {
          return (
@@ -156,7 +216,9 @@ export const FaceControl = (props: FaceControlProps): any => {
    };
    return {
       DoFaceFront,
+      DoFaceBack,
       DoFaceTop,
+      DoFaceBottom,
       DoFaceRight,
       DoFaceLeft,
    };
