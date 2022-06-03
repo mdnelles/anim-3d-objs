@@ -6,12 +6,11 @@ import { FaceControl } from "./Faces/FaceControl";
 interface SlabProps {
    anim1?: string;
    anim2?: string;
-   border?: string;
    width?: number;
    height?: number | string;
    depth?: number;
-   globalStyles?:
-      | { border: string; bgc: string; opacity: number | string }
+   fgStyles?:
+      | { border: string; bgc: string; opac: number | string }
       | undefined;
    faces?:
       | {
@@ -40,18 +39,12 @@ const Slab = (props: SlabProps) => {
       width = 5,
       height = 5,
       depth = 5,
-      border = "",
-      faces = {},
-      globalStyles = {},
+      faces,
+      fgStyles,
       tranz = (+height / 2) | 0,
    } = props;
    const tmp: any = props;
 
-   const color = "#FFF",
-      fontWeight: number | string = 800,
-      lineHeight: number = 1.2,
-      fontSize: number | string = 20,
-      textAlign: string | any = "center";
    const {
       DoFaceRight,
       DoFaceLeft,

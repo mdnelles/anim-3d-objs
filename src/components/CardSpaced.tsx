@@ -47,7 +47,7 @@ const CardSpaced = (props: CardSpacedProps) => {
                      id='front'
                      bgc='blue'
                      tranz={tranz}
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div
@@ -70,7 +70,7 @@ const CardSpaced = (props: CardSpacedProps) => {
                      id='top'
                      tranz={tranz}
                      bgc='red'
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div

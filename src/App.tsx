@@ -6,28 +6,27 @@ const size: number = 200;
 function App() {
    const faceprops = {
       front: true,
-      back: false,
+      back: true,
       left: true,
       right: true,
-      top: false,
-      bottom: false,
+      top: true,
+      bottom: true,
    };
-   const globalStyles = {
+   const fgStyles = {
       border: "1px solid #fff",
       bgc: "blue",
-      opacity: 0.9,
+      opac: 0.4,
    };
    return (
       <div style={{ padding: 200 }}>
          <Slab
             anim1='X360'
             anim2='Y360'
-            width={330}
-            depth={150}
+            width={160}
+            depth={330}
             height={332}
-            border='1px solid #fff'
             faces={faceprops}
-            globalStyles={globalStyles}
+            fgStyles={fgStyles}
          />
       </div>
    );

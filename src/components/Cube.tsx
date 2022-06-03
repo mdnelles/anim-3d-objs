@@ -42,7 +42,7 @@ const Cube = (props: CubeProps) => {
                      id='right'
                      tranz={tranz}
                      bgc='blue'
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div
@@ -63,7 +63,7 @@ const Cube = (props: CubeProps) => {
                      id='left'
                      tranz={tranz}
                      bgc='black'
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div
@@ -84,7 +84,7 @@ const Cube = (props: CubeProps) => {
                      id='front'
                      bgc='maroon'
                      tranz={tranz}
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div
@@ -105,7 +105,7 @@ const Cube = (props: CubeProps) => {
                      id='top'
                      tranz={tranz}
                      bgc='green'
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div
@@ -126,7 +126,7 @@ const Cube = (props: CubeProps) => {
                      id='top'
                      tranz={tranz}
                      bgc='red'
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div
@@ -147,7 +147,7 @@ const Cube = (props: CubeProps) => {
                      id='top'
                      tranz={tranz}
                      bgc='purple'
-                     opacity={0.5}
+                     opac={0.5}
                      border={border}
                   >
                      <div

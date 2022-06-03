@@ -6,6 +6,7 @@ interface FaceRightProps {
    border?: string;
    children?: string | any;
    depth?: number | any;
+   fgStyles?: object | any;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -13,7 +14,7 @@ interface FaceRightProps {
    left?: number;
    lineHeight?: number;
    margin?: number | string;
-   opacity?: number;
+   opac?: number | string | undefined;
    padding?: number | string;
    position?: number;
    style?: string;
@@ -21,23 +22,22 @@ interface FaceRightProps {
    top?: number;
    tranz?: number | string;
    width?: number | string;
-   globalStyles?: object | undefined;
 }
 
 const FaceRight = (props: FaceRightProps) => {
    let {
       bfv = "visible",
-      bgc = "",
+      bgc = "none",
       border = "0px solid #fff",
       children,
       depth = 10,
+      fgStyles = {},
       height = 10,
       id = 0,
-      opacity = 1,
+      opac = 2,
       position = "absolute",
       tranz = 80,
       width = 10,
-      globalStyles = {},
    } = props;
 
    if (height > width && !depth) {
@@ -50,20 +50,13 @@ const FaceRight = (props: FaceRightProps) => {
       tranz = +width - +depth / 2;
       width = +depth;
    }
-   /*   } else if (height > width && depth) {
-      tranz = +width - +depth / 2;
-      width = +depth;
-   } else if (width > height && depth) {
-      tranz = +width - +depth / 2;
-      width = +depth;
-   }*/
 
    const Specs: any = styled.div`
-      opacity: ${opacity};
+      opacity: ${opac === 2 ? fgStyles.opac : 1};
       position: ${position};
       width: ${width}px;
       height: ${height}px;
-      background-color: ${bgc};
+      background-color: ${bgc === "none" ? fgStyles.bgc : bgc};
       border: ${border};
       backface-visibility: ${bfv};
       transform: rotateY(90deg) translateZ(${tranz}px);
