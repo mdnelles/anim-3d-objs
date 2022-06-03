@@ -1,41 +1,40 @@
 import styled from "styled-components";
 
 interface FaceBottomProps {
-   bfv?: string;
-   bgc?: string;
-   border?: string;
+   bfv?: string | boolean;
+   bgc?: string | boolean;
+   border?: string | boolean;
    children?: string | any;
-   depth?: number;
    fgStyles?: object | any;
-   fontSize?: number | string;
+   depth?: number | any;
    height?: number | string;
    id?: string | number;
-   imgSrc?: string;
    left?: number;
-   lineHeight?: number;
    margin?: number | string;
-   opac?: number | string | undefined;
+   opac?: number | string | boolean | undefined;
    padding?: number | string;
    position?: number;
-   style?: string;
-   textAlign?: string;
    top?: number;
-   tranz?: number | any;
+   tranz?: number | string;
    width?: number | string;
 }
 
 const FaceBottom = (props: FaceBottomProps) => {
    let {
-      bfv = "visible",
-      bgc = "",
-      border = "0px solid #fff",
+      bfv = false,
+      bgc = false,
+      border = false,
       children,
       depth = 10,
       fgStyles = {},
       height = 10,
       id = 0,
-      opac = 2,
+      left = 0,
+      margin = 0,
+      opac = false,
+      padding = 20,
       position = "absolute",
+      top = 0,
       tranz = 80,
       width = 10,
    } = props;
@@ -44,13 +43,16 @@ const FaceBottom = (props: FaceBottomProps) => {
    height = +depth;
 
    const Specs: any = styled.div`
-      opacity: ${opac === 2 ? fgStyles.opac : 1};
+      opacity: ${!!opac ? opac : fgStyles.opac};
       position: ${position};
+      left: ${left};
+      margin: ${margin};
+      padding: ${padding};
       width: ${width}px;
       height: ${height}px;
-      background-color: ${bgc};
-      border: ${border};
-      backface-visibility: ${bfv};
+      background-color: ${!!bgc ? bgc : fgStyles.bgc};
+      border: ${!!border ? border : fgStyles.border};
+      backface-visibility: ${!!bfv ? bfv : fgStyles.bfv};
       transform: rotateX(-90deg) translateZ(${tranz}px);
       top: 0;
    `;

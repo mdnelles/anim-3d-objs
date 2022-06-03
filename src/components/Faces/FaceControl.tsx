@@ -29,8 +29,9 @@ export interface FaceControlProps {
 }
 
 export const FaceControl = (props: FaceControlProps): any => {
-   const color = "#FFF",
+   const color = "#eee",
       fontWeight: number | string = 800,
+      textShadow: string = "1px 1px #555",
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
@@ -47,13 +48,14 @@ export const FaceControl = (props: FaceControlProps): any => {
                // if specified opac / bgc / border will over-ride fgStyles
                opac={0.5}
                border={border}
-               bgc='maroon'
+               bgc='#cccc99'
                fgStyles={fgStyles}
             >
                <div
                   style={{
                      color,
                      fontWeight,
+                     textShadow,
                      lineHeight,
                      fontSize,
                      textAlign,
@@ -76,8 +78,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                depth={depth}
                id='top'
                tranz={tranz}
-               bgc='red'
-               opac={0.5}
+               bgc='#cccc99'
                fgStyles={fgStyles}
                border={border}
             >
@@ -85,6 +86,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                   style={{
                      color,
                      fontWeight,
+                     textShadow,
                      lineHeight,
                      fontSize,
                      textAlign,
@@ -107,13 +109,14 @@ export const FaceControl = (props: FaceControlProps): any => {
                depth={depth}
                id='top'
                tranz={tranz}
-               bgc='green'
+               bgc='#111'
                fgStyles={fgStyles}
                border={border}
             >
                <div
                   style={{
                      color,
+                     textShadow,
                      fontWeight,
                      lineHeight,
                      fontSize,
@@ -137,7 +140,6 @@ export const FaceControl = (props: FaceControlProps): any => {
                depth={depth}
                id='top'
                tranz={tranz}
-               bgc='purple'
                fgStyles={fgStyles}
                border={border}
             >
@@ -145,6 +147,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                   style={{
                      color,
                      fontWeight,
+                     textShadow,
                      lineHeight,
                      fontSize,
                      textAlign,
@@ -174,6 +177,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                   style={{
                      color,
                      fontWeight,
+                     textShadow,
                      lineHeight,
                      fontSize,
                      textAlign,
@@ -204,6 +208,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                   style={{
                      color,
                      fontWeight,
+                     textShadow,
                      lineHeight,
                      fontSize,
                      textAlign,
