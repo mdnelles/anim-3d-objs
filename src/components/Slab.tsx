@@ -58,44 +58,15 @@ const Slab = (props: SlabProps) => {
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
-   const { DoFaceRight } = FaceControl(tmp);
+   const { DoFaceRight, DoFaceLeft } = FaceControl(tmp);
    return (
       <SceneStyle width={width} height={height}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <SlabWrapper>
-                  {DoFaceRight(
-                     width,
-                     height,
-                     depth,
-                     border,
-                     faces,
-                     globalStyles,
-                     tranz
-                  )}
+                  {DoFaceRight()}
+                  {DoFaceLeft()}
 
-                  <FaceLeft
-                     width={width}
-                     height={height}
-                     depth={depth}
-                     id='left'
-                     tranz={tranz}
-                     bgc='black'
-                     opacity={0.5}
-                     border={border}
-                  >
-                     <div
-                        style={{
-                           color,
-                           fontWeight,
-                           lineHeight,
-                           fontSize,
-                           textAlign,
-                        }}
-                     >
-                        LEFT
-                     </div>
-                  </FaceLeft>
                   <FaceFront
                      width={width}
                      height={height}

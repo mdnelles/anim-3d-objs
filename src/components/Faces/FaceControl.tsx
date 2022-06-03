@@ -1,3 +1,4 @@
+import FaceLeft from "./FaceLeft";
 import FaceRight from "./FaceRight";
 
 export interface FaceControlProps {
@@ -30,35 +31,68 @@ export const FaceControl = (props: FaceControlProps): any => {
       fontSize: number | string = 20,
       textAlign: string | any = "center";
    const { width, height, depth, border, faces, globalStyles, tranz } = props;
-
-   const DoFaceRight = function (): any {
-      faces && faces.right ? (
-         <FaceRight
-            width={width}
-            height={height}
-            depth={depth}
-            id='right'
-            tranz={tranz}
-            border={border}
-            globalStyles={globalStyles}
-         >
-            <div
-               style={{
-                  color,
-                  fontWeight,
-                  lineHeight,
-                  fontSize,
-                  textAlign,
-               }}
+   //console.log(faces);
+   const DoFaceRight = (): any => {
+      if (!!faces && !!faces.right) {
+         return (
+            <FaceRight
+               width={width}
+               height={height}
+               depth={depth}
+               id='right'
+               tranz={tranz}
+               border={border}
+               globalStyles={globalStyles}
             >
-               RIGHT
-            </div>
-         </FaceRight>
-      ) : (
-         <></>
-      );
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     lineHeight,
+                     fontSize,
+                     textAlign,
+                  }}
+               >
+                  RIGHT
+               </div>
+            </FaceRight>
+         );
+      } else {
+         return <></>;
+      }
+   };
+   const DoFaceLeft = (): any => {
+      if (!!faces && !!faces.left) {
+         return (
+            <FaceLeft
+               width={width}
+               height={height}
+               depth={depth}
+               id='left'
+               tranz={tranz}
+               bgc='black'
+               opacity={0.5}
+               border={border}
+            >
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     lineHeight,
+                     fontSize,
+                     textAlign,
+                  }}
+               >
+                  LEFT
+               </div>
+            </FaceLeft>
+         );
+      } else {
+         return <></>;
+      }
    };
    return {
       DoFaceRight,
+      DoFaceLeft,
    };
 };

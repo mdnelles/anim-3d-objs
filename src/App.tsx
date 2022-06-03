@@ -7,8 +7,8 @@ function App() {
    const faceprops = {
       front: true,
       back: true,
-      left: true,
-      right: true,
+      left: false,
+      right: false,
       top: true,
       bottom: true,
    };
