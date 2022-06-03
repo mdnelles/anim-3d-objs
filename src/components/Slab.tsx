@@ -58,7 +58,7 @@ const Slab = (props: SlabProps) => {
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
-   const { DoFaceRight, DoFaceLeft } = FaceControl(tmp);
+   const { DoFaceRight, DoFaceLeft, DoFaceFront, DoFaceTop } = FaceControl(tmp);
    return (
       <SceneStyle width={width} height={height}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
@@ -66,51 +66,9 @@ const Slab = (props: SlabProps) => {
                <SlabWrapper>
                   {DoFaceRight()}
                   {DoFaceLeft()}
+                  {DoFaceFront()}
+                  {DoFaceTop()}
 
-                  <FaceFront
-                     width={width}
-                     height={height}
-                     depth={depth}
-                     id='front'
-                     bgc='maroon'
-                     tranz={tranz}
-                     opacity={0.5}
-                     border={border}
-                  >
-                     <div
-                        style={{
-                           color,
-                           fontWeight,
-                           lineHeight,
-                           fontSize,
-                           textAlign,
-                        }}
-                     >
-                        FRONT
-                     </div>
-                  </FaceFront>
-                  <FaceTop
-                     width={width}
-                     height={height}
-                     depth={depth}
-                     id='top'
-                     tranz={tranz}
-                     bgc='green'
-                     opacity={0.5}
-                     border={border}
-                  >
-                     <div
-                        style={{
-                           color,
-                           fontWeight,
-                           lineHeight,
-                           fontSize,
-                           textAlign,
-                        }}
-                     >
-                        TOP
-                     </div>
-                  </FaceTop>
                   <FaceBack
                      width={width}
                      height={height}

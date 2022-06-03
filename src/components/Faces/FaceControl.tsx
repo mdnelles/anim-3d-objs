@@ -1,5 +1,7 @@
+import FaceFront from "./FaceFront";
 import FaceLeft from "./FaceLeft";
 import FaceRight from "./FaceRight";
+import FaceTop from "./FaceTop";
 
 export interface FaceControlProps {
    anim1?: string;
@@ -31,7 +33,68 @@ export const FaceControl = (props: FaceControlProps): any => {
       fontSize: number | string = 20,
       textAlign: string | any = "center";
    const { width, height, depth, border, faces, globalStyles, tranz } = props;
-   //console.log(faces);
+   const DoFaceFront = (): any => {
+      if (!!faces && !!faces.front) {
+         return (
+            <FaceFront
+               width={width}
+               height={height}
+               depth={depth}
+               id='front'
+               bgc='maroon'
+               tranz={tranz}
+               opacity={0.5}
+               border={border}
+            >
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     lineHeight,
+                     fontSize,
+                     textAlign,
+                  }}
+               >
+                  FRONT
+               </div>
+            </FaceFront>
+         );
+      } else {
+         return <></>;
+      }
+   };
+
+   const DoFaceTop = (): any => {
+      if (!!faces && !!faces.top) {
+         return (
+            <FaceTop
+               width={width}
+               height={height}
+               depth={depth}
+               id='top'
+               tranz={tranz}
+               bgc='green'
+               opacity={0.5}
+               border={border}
+            >
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     lineHeight,
+                     fontSize,
+                     textAlign,
+                  }}
+               >
+                  TOP
+               </div>
+            </FaceTop>
+         );
+      } else {
+         return <></>;
+      }
+   };
+
    const DoFaceRight = (): any => {
       if (!!faces && !!faces.right) {
          return (
@@ -92,6 +155,8 @@ export const FaceControl = (props: FaceControlProps): any => {
       }
    };
    return {
+      DoFaceFront,
+      DoFaceTop,
       DoFaceRight,
       DoFaceLeft,
    };
