@@ -55,15 +55,16 @@ const FaceLeft = (props: FaceLeftProps) => {
       console.log(2);
       tranz = +height / 2;
       height = +width;
-   } else if (height > width && depth) {
+      /* } else if (height > width && depth) {
       tranz = +depth / 2; //90; //+width / 2;
       width = +depth;
    } else if (width > height && depth) {
       console.log(4);
       tranz = depth / 2;
-      width = +depth;
+      width = +depth;*/
    } else {
-      console.log(`width:${width} height:${height} depth:${depth}`);
+      tranz = +depth / 2; //90; //+width / 2;
+      width = +depth;
    }
 
    const Specs: any = styled.div`

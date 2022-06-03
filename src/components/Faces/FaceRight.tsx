@@ -46,13 +46,17 @@ const FaceRight = (props: FaceRightProps) => {
    } else if (width > height && !depth) {
       tranz = +height / 2;
       height = +width;
-   } else if (height > width && depth) {
+   } else {
+      tranz = +width - +depth / 2;
+      width = +depth;
+   }
+   /*   } else if (height > width && depth) {
       tranz = +width - +depth / 2;
       width = +depth;
    } else if (width > height && depth) {
       tranz = +width - +depth / 2;
       width = +depth;
-   }
+   }*/
 
    const Specs: any = styled.div`
       opacity: ${opacity};
