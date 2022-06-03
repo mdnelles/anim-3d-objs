@@ -15,6 +15,19 @@ interface SlabProps {
    width?: number;
    height?: number | string;
    depth?: number;
+   globalStyles?:
+      | { border: string; bgc: string; opacity: number | string }
+      | undefined;
+   faces?:
+      | {
+           front: boolean;
+           back: boolean;
+           left: boolean;
+           right: boolean;
+           top: boolean;
+           bottom: boolean;
+        }
+      | undefined;
 }
 
 const SlabWrapper = styled.div`
@@ -32,6 +45,8 @@ const Slab = (props: SlabProps) => {
       height = 5,
       depth = 5,
       border = "",
+      faces = {},
+      globalStyles = {},
    } = props;
    let tranz: number = +height / 2;
    const color = "#FFF",
@@ -50,9 +65,8 @@ const Slab = (props: SlabProps) => {
                      depth={depth}
                      id='right'
                      tranz={tranz}
-                     bgc='blue'
-                     opacity={0.5}
                      border={border}
+                     globalStyles={globalStyles}
                   >
                      <div
                         style={{
@@ -66,6 +80,7 @@ const Slab = (props: SlabProps) => {
                         RIGHT
                      </div>
                   </FaceRight>
+
                   <FaceLeft
                      width={width}
                      height={height}
