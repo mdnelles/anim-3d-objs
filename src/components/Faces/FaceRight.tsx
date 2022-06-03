@@ -21,6 +21,7 @@ interface FaceRightProps {
    top?: number;
    tranz?: number | string;
    width?: number | string;
+   globalStyles?: object | undefined;
 }
 
 const FaceRight = (props: FaceRightProps) => {
@@ -36,6 +37,7 @@ const FaceRight = (props: FaceRightProps) => {
       position = "absolute",
       tranz = 80,
       width = 10,
+      globalStyles = {},
    } = props;
 
    if (height > width && !depth) {
