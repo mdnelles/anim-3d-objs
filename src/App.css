@@ -37,18 +37,18 @@ body {
 }
 @-webkit-keyframes fadeIn-kf {
    from {
-      opacity: 0;
+      opac: 0;
    }
    to {
-      opacity: 1;
+      opac: 1;
    }
 }
 @keyframes fadeIn-kf {
    from {
-      opacity: 0;
+      opac: 0;
    }
    to {
-      opacity: 1;
+      opac: 1;
    }
 }
 .animFadeOutFast {
@@ -77,18 +77,18 @@ body {
 }
 @-webkit-keyframes fadeOut-kf {
    from {
-      opacity: 1;
+      opac: 1;
    }
    to {
-      opacity: 0;
+      opac: 0;
    }
 }
 @keyframes fadeOut-kf {
    from {
-      opacity: 1;
+      opac: 1;
    }
    to {
-      opacity: 0;
+      opac: 0;
    }
 }
 
@@ -107,10 +107,10 @@ body {
 }
 @keyframes fadeIn-kf {
    from {
-      opacity: 0;
+      opac: 0;
    }
    to {
-      opacity: 1;
+      opac: 1;
    }
 }
 
@@ -649,7 +649,7 @@ body {
    width: 76px;
    height: 76px;
    float: left;
-   opacity: 1;
+   opac: 1;
    padding: 0px;
    /*
 -webkit-perspective: spec.perspective ||40px;

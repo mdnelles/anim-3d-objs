@@ -11,7 +11,7 @@ const size: number = 200;
 const bgc = "#00F";
 
 const Specs: any = styled.div`
-   opacity: 0.5;
+   opac: 0.5;
    position: absolute;
    width: 100px;
    height: 100px;

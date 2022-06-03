@@ -12,8 +12,8 @@ export interface FaceControlProps {
    width?: number;
    height?: number | string;
    depth?: number;
-   faceGlobalStyles?:
-      | { border: string; bgc: string; opacity: number | string }
+   fgStyles?:
+      | { border: string; bgc: string; opac: number | string }
       | undefined;
    faces?:
       | {
@@ -34,8 +34,7 @@ export const FaceControl = (props: FaceControlProps): any => {
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
-   const { width, height, depth, border, faces, faceGlobalStyles, tranz } =
-      props;
+   const { width, height, depth, border, faces, fgStyles, tranz } = props;
    const DoFaceFront = (): any => {
       if (!!faces && !!faces.front) {
          return (
@@ -44,10 +43,12 @@ export const FaceControl = (props: FaceControlProps): any => {
                height={height}
                depth={depth}
                id='front'
-               bgc='maroon'
                tranz={tranz}
-               opacity={!!faceGlobalStyles ? faceGlobalStyles.opacity : 0.5}
+               // if specified opac / bgc / border will over-ride fgStyles
+               opac={0.5}
                border={border}
+               bgc='maroon'
+               fgStyles={fgStyles}
             >
                <div
                   style={{
@@ -76,7 +77,8 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='top'
                tranz={tranz}
                bgc='red'
-               opacity={0.5}
+               opac={0.5}
+               fgStyles={fgStyles}
                border={border}
             >
                <div
@@ -106,7 +108,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='top'
                tranz={tranz}
                bgc='green'
-               opacity={0.5}
+               fgStyles={fgStyles}
                border={border}
             >
                <div
@@ -136,7 +138,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='top'
                tranz={tranz}
                bgc='purple'
-               opacity={0.5}
+               fgStyles={fgStyles}
                border={border}
             >
                <div
@@ -166,7 +168,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='right'
                tranz={tranz}
                border={border}
-               faceGlobalStyles={faceGlobalStyles}
+               fgStyles={fgStyles}
             >
                <div
                   style={{
@@ -195,7 +197,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='left'
                tranz={tranz}
                bgc='black'
-               opacity={0.5}
+               fgStyles={fgStyles}
                border={border}
             >
                <div

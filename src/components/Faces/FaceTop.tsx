@@ -7,6 +7,7 @@ interface FaceProps {
    border?: string;
    children?: string | any;
    depth?: number;
+   fgStyles?: object | any;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -14,7 +15,7 @@ interface FaceProps {
    left?: number;
    lineHeight?: number;
    margin?: number | string;
-   opacity?: number;
+   opac?: number | string | undefined;
    padding?: number | string;
    position?: number;
    style?: string;
@@ -31,9 +32,10 @@ const FaceTop = (props: FaceProps) => {
       border = "0px solid #fff",
       children,
       depth = 10,
+      fgStyles = {},
       height = 10,
       id = 0,
-      opacity = 1,
+      opac = 2,
       position = "absolute",
       tranz = 80,
       width = 10,
@@ -43,7 +45,7 @@ const FaceTop = (props: FaceProps) => {
    height = +depth;
 
    const Specs: any = styled.div`
-      opacity: ${opacity};
+      opacity: ${opac === 2 ? fgStyles.opac : 1};
       position: ${position};
       width: ${width}px;
       height: ${height}px;

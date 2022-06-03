@@ -9,8 +9,8 @@ interface SlabProps {
    width?: number;
    height?: number | string;
    depth?: number;
-   faceGlobalStyles?:
-      | { border: string; bgc: string; opacity: number | string }
+   fgStyles?:
+      | { border: string; bgc: string; opac: number | string }
       | undefined;
    faces?:
       | {
@@ -40,7 +40,7 @@ const Slab = (props: SlabProps) => {
       height = 5,
       depth = 5,
       faces,
-      faceGlobalStyles,
+      fgStyles,
       tranz = (+height / 2) | 0,
    } = props;
    const tmp: any = props;

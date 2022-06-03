@@ -7,6 +7,7 @@ interface FaceLeftProps {
    border?: string;
    children?: string | any;
    depth?: number | any;
+   fgStyles?: object | any;
    fontSize?: number | string;
    height?: number | string;
    id?: string | number;
@@ -14,7 +15,7 @@ interface FaceLeftProps {
    left?: number;
    lineHeight?: number;
    margin?: number | string;
-   opacity?: number;
+   opac?: number | string | undefined;
    padding?: number | string;
    position?: number;
    style?: string;
@@ -31,6 +32,7 @@ const FaceLeft = (props: FaceLeftProps) => {
       border = "0px solid #fff",
       children,
       depth = 10,
+      fgStyles = {},
       fontSize = 10,
       height = 10,
       id = 0,
@@ -38,7 +40,7 @@ const FaceLeft = (props: FaceLeftProps) => {
       left = 0,
       lineHeight = 1,
       margin = 0,
-      opacity = 1,
+      opac = 2,
       padding = 20,
       position = "absolute",
       textAlign = "left",
@@ -61,7 +63,7 @@ const FaceLeft = (props: FaceLeftProps) => {
    }
 
    const Specs: any = styled.div`
-      opacity: ${opacity};
+      opacity: ${opac === 2 ? fgStyles.opac : 1};
       position: ${position};
       font-size: ${fontSize};
       background-image: url("${imgSrc}");

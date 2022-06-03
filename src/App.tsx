@@ -6,16 +6,16 @@ const size: number = 200;
 function App() {
    const faceprops = {
       front: true,
-      back: false,
+      back: true,
       left: true,
-      right: false,
-      top: false,
-      bottom: false,
+      right: true,
+      top: true,
+      bottom: true,
    };
-   const faceGlobalStyles = {
+   const fgStyles = {
       border: "1px solid #fff",
       bgc: "blue",
-      opacity: 0.9,
+      opac: 0.4,
    };
    return (
       <div style={{ padding: 200 }}>
@@ -26,7 +26,7 @@ function App() {
             depth={330}
             height={332}
             faces={faceprops}
-            faceGlobalStyles={faceGlobalStyles}
+            fgStyles={fgStyles}
          />
       </div>
    );
