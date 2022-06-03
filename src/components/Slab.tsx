@@ -7,6 +7,7 @@ import FaceBack from "./Faces/FaceBack";
 import FaceBottom from "./Faces/FaceBottom";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
+import { FaceControl } from "./Faces/FaceControl";
 
 interface SlabProps {
    anim1?: string;
@@ -28,6 +29,7 @@ interface SlabProps {
            bottom: boolean;
         }
       | undefined;
+   tranz?: any;
 }
 
 const SlabWrapper = styled.div`
@@ -47,39 +49,30 @@ const Slab = (props: SlabProps) => {
       border = "",
       faces = {},
       globalStyles = {},
+      tranz = (+height / 2) | 0,
    } = props;
-   let tranz: number = +height / 2;
+   const tmp: any = props;
+
    const color = "#FFF",
       fontWeight: number | string = 800,
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
+   const { DoFaceRight } = FaceControl(tmp);
    return (
       <SceneStyle width={width} height={height}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <SlabWrapper>
-                  <FaceRight
-                     width={width}
-                     height={height}
-                     depth={depth}
-                     id='right'
-                     tranz={tranz}
-                     border={border}
-                     globalStyles={globalStyles}
-                  >
-                     <div
-                        style={{
-                           color,
-                           fontWeight,
-                           lineHeight,
-                           fontSize,
-                           textAlign,
-                        }}
-                     >
-                        RIGHT
-                     </div>
-                  </FaceRight>
+                  {DoFaceRight(
+                     width,
+                     height,
+                     depth,
+                     border,
+                     faces,
+                     globalStyles,
+                     tranz
+                  )}
 
                   <FaceLeft
                      width={width}

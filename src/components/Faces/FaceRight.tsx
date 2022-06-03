@@ -55,7 +55,7 @@ const FaceRight = (props: FaceRightProps) => {
    }
 
    const Specs: any = styled.div`
-      opacity: ${globalStyles.opactiy | opacity};
+      opacity: ${opacity};
       position: ${position};
       width: ${width}px;
       height: ${height}px;
