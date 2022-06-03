@@ -12,7 +12,7 @@ export interface FaceControlProps {
    width?: number;
    height?: number | string;
    depth?: number;
-   globalStyles?:
+   faceGlobalStyles?:
       | { border: string; bgc: string; opacity: number | string }
       | undefined;
    faces?:
@@ -34,7 +34,8 @@ export const FaceControl = (props: FaceControlProps): any => {
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
-   const { width, height, depth, border, faces, globalStyles, tranz } = props;
+   const { width, height, depth, border, faces, faceGlobalStyles, tranz } =
+      props;
    const DoFaceFront = (): any => {
       if (!!faces && !!faces.front) {
          return (
@@ -45,7 +46,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='front'
                bgc='maroon'
                tranz={tranz}
-               opacity={0.5}
+               opacity={!!faceGlobalStyles ? faceGlobalStyles.opacity : 0.5}
                border={border}
             >
                <div
@@ -165,7 +166,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='right'
                tranz={tranz}
                border={border}
-               globalStyles={globalStyles}
+               faceGlobalStyles={faceGlobalStyles}
             >
                <div
                   style={{

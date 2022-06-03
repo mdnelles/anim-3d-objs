@@ -21,7 +21,7 @@ interface FaceRightProps {
    top?: number;
    tranz?: number | string;
    width?: number | string;
-   globalStyles?: object | undefined;
+   faceGlobalStyles?: object | undefined;
 }
 
 const FaceRight = (props: FaceRightProps) => {
@@ -37,7 +37,7 @@ const FaceRight = (props: FaceRightProps) => {
       position = "absolute",
       tranz = 80,
       width = 10,
-      globalStyles = {},
+      faceGlobalStyles = {},
    } = props;
 
    if (height > width && !depth) {
@@ -50,13 +50,6 @@ const FaceRight = (props: FaceRightProps) => {
       tranz = +width - +depth / 2;
       width = +depth;
    }
-   /*   } else if (height > width && depth) {
-      tranz = +width - +depth / 2;
-      width = +depth;
-   } else if (width > height && depth) {
-      tranz = +width - +depth / 2;
-      width = +depth;
-   }*/
 
    const Specs: any = styled.div`
       opacity: ${opacity};

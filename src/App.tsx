@@ -8,11 +8,11 @@ function App() {
       front: true,
       back: false,
       left: true,
-      right: true,
+      right: false,
       top: false,
       bottom: false,
    };
-   const globalStyles = {
+   const faceGlobalStyles = {
       border: "1px solid #fff",
       bgc: "blue",
       opacity: 0.9,
@@ -22,12 +22,11 @@ function App() {
          <Slab
             anim1='X360'
             anim2='Y360'
-            width={330}
-            depth={150}
+            width={160}
+            depth={330}
             height={332}
-            border='1px solid #fff'
             faces={faceprops}
-            globalStyles={globalStyles}
+            faceGlobalStyles={faceGlobalStyles}
          />
       </div>
    );

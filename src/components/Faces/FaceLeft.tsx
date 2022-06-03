@@ -55,15 +55,8 @@ const FaceLeft = (props: FaceLeftProps) => {
       console.log(2);
       tranz = +height / 2;
       height = +width;
-      /* } else if (height > width && depth) {
-      tranz = +depth / 2; //90; //+width / 2;
-      width = +depth;
-   } else if (width > height && depth) {
-      console.log(4);
-      tranz = depth / 2;
-      width = +depth;*/
    } else {
-      tranz = +depth / 2; //90; //+width / 2;
+      tranz = +depth / 2;
       width = +depth;
    }
 

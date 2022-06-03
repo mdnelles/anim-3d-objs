@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 interface FaceFrontProps {
@@ -14,7 +13,7 @@ interface FaceFrontProps {
    left?: number;
    lineHeight?: number;
    margin?: number | string;
-   opacity?: number;
+   opacity?: number | string | undefined;
    padding?: number | string;
    position?: number;
    style?: string;
