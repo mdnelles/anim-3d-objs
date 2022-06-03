@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 interface FaceBackProps {
-   bfv?: string;
-   bgc?: string;
-   border?: string;
+   bfv?: string | boolean;
+   bgc?: string | boolean;
+   border?: string | boolean;
    children?: string | any;
    fgStyles?: object | any;
    depth?: number | any;
@@ -11,10 +11,9 @@ interface FaceBackProps {
    id?: string | number;
    left?: number;
    margin?: number | string;
-   opac?: number | string | undefined;
+   opac?: number | string | boolean | undefined;
    padding?: number | string;
    position?: number;
-   style?: string;
    top?: number;
    tranz?: number | string;
    width?: number | string;
@@ -22,9 +21,9 @@ interface FaceBackProps {
 
 const FaceBack = (props: FaceBackProps) => {
    let {
-      bfv = "visible",
-      bgc = "",
-      border = "0px solid #fff",
+      bfv = false,
+      bgc = false,
+      border = false,
       children,
       depth = 10,
       fgStyles = {},
@@ -32,10 +31,9 @@ const FaceBack = (props: FaceBackProps) => {
       id = 0,
       left = 0,
       margin = 0,
-      opac = 2,
+      opac = false,
       padding = 20,
       position = "absolute",
-      style = "",
       top = 0,
       tranz = 80,
       width = 10,
@@ -48,16 +46,16 @@ const FaceBack = (props: FaceBackProps) => {
    }
 
    const Specs: any = styled.div`
-      opacity: ${opac === 2 ? fgStyles.opac : 1};
+      opacity: ${!!opac ? opac : fgStyles.opac};
       position: ${position};
       left: ${left};
       margin: ${margin};
       padding: ${padding};
       width: ${width}px;
       height: ${height}px;
-      background-color: ${bgc};
-      border: ${border};
-      backface-visibility: ${bfv};
+      background-color: ${!!bgc ? bgc : fgStyles.bgc};
+      border: ${!!border ? border : fgStyles.border};
+      backface-visibility: ${!!bfv ? bfv : fgStyles.bfv};
       transform: rotateY(180deg) translateZ(${tranz}px);
       top: ${top};
    `;

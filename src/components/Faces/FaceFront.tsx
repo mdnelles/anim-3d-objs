@@ -1,34 +1,29 @@
 import styled from "styled-components";
 
 interface FaceFrontProps {
-   bfv?: string;
+   bfv?: string | boolean;
    bgc?: string | boolean;
-   border?: string;
+   border?: string | boolean;
    children?: string | any;
-   depth?: number | any;
    fgStyles?: object | any;
-   fontSize?: number | string;
+   depth?: number | any;
    height?: number | string;
    id?: string | number;
-   imgSrc?: string;
    left?: number;
-   lineHeight?: number;
    margin?: number | string;
    opac?: number | string | boolean | undefined;
    padding?: number | string;
    position?: number;
-   style?: string;
-   textAlign?: string;
    top?: number;
    tranz?: number | string;
-   width?: number;
+   width?: number | string;
 }
 
 const FaceFront = (props: FaceFrontProps) => {
    let {
-      bfv = "visible",
+      bfv = false,
       bgc = false,
-      border = "0px solid #fff",
+      border = false,
       children,
       depth = 10,
       fgStyles = {},
@@ -38,8 +33,7 @@ const FaceFront = (props: FaceFrontProps) => {
       margin = 0,
       opac = false,
       padding = 20,
-      position = "relative",
-      textAlign = "left",
+      position = "absolute",
       top = 0,
       tranz = 80,
       width = 10,
@@ -52,17 +46,16 @@ const FaceFront = (props: FaceFrontProps) => {
    }
    console.log("---opac: " + opac);
    const Specs: any = styled.div`
-      opacity: ${!opac ? fgStyles.opac : !!opac ? opac : 1};
+      opacity: ${!!opac ? opac : fgStyles.opac};
       position: ${position};
       left: ${left};
       margin: ${margin};
       padding: ${padding};
-      text-align: ${textAlign};
       width: ${width}px;
       height: ${height}px;
-      background-color: ${!!bgc ? bgc : !!fgStyles.bgc ? fgStyles.bgc : ""};
-      border: ${border};
-      backface-visibility: ${bfv};
+      background-color: ${!!bgc ? bgc : fgStyles.bgc};
+      border: ${!!border ? border : fgStyles.border};
+      backface-visibility: ${!!bfv ? bfv : fgStyles.bfv};
       transform: rotateY(0deg) translateZ(${tranz}px);
       top: ${top};
    `;

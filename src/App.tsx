@@ -13,9 +13,10 @@ function App() {
       bottom: true,
    };
    const fgStyles = {
-      border: "1px solid #fff",
-      bgc: "blue",
-      opac: 0.4,
+      border: "1px solid #111",
+      bgc: "#333",
+      opac: 0.9,
+      bfv: "visible",
    };
    return (
       <div style={{ padding: 200 }}>
@@ -23,7 +24,7 @@ function App() {
             anim1='X360'
             anim2='Y360'
             width={160}
-            depth={330}
+            depth={25}
             height={332}
             faces={faceprops}
             fgStyles={fgStyles}

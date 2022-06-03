@@ -2,48 +2,39 @@ import React from "react";
 import styled from "styled-components";
 
 interface FaceLeftProps {
-   bfv?: string;
-   bgc?: string;
-   border?: string;
+   bfv?: string | boolean;
+   bgc?: string | boolean;
+   border?: string | boolean;
    children?: string | any;
-   depth?: number | any;
    fgStyles?: object | any;
-   fontSize?: number | string;
+   depth?: number | any;
    height?: number | string;
    id?: string | number;
-   imgSrc?: string;
    left?: number;
-   lineHeight?: number;
    margin?: number | string;
-   opac?: number | string | undefined;
+   opac?: number | string | boolean | undefined;
    padding?: number | string;
    position?: number;
-   style?: string;
-   textAlign?: string;
    top?: number;
    tranz?: number | string;
-   width?: number;
+   width?: number | string;
 }
 
 const FaceLeft = (props: FaceLeftProps) => {
    let {
-      bfv = "visible",
-      bgc = "",
-      border = "0px solid #fff",
+      bfv = false,
+      bgc = false,
+      border = false,
       children,
       depth = 10,
       fgStyles = {},
-      fontSize = 10,
       height = 10,
       id = 0,
-      imgSrc = "",
       left = 0,
-      lineHeight = 1,
       margin = 0,
-      opac = 2,
+      opac = false,
       padding = 20,
       position = "absolute",
-      textAlign = "left",
       top = 0,
       tranz = 80,
       width = 10,
@@ -63,20 +54,16 @@ const FaceLeft = (props: FaceLeftProps) => {
    }
 
    const Specs: any = styled.div`
-      opacity: ${opac === 2 ? fgStyles.opac : 1};
+      opacity: ${!!opac ? opac : fgStyles.opac};
       position: ${position};
-      font-size: ${fontSize};
-      background-image: url("${imgSrc}");
       left: ${left};
-      line-height: ${lineHeight};
       margin: ${margin};
       padding: ${padding};
-      text-align: ${textAlign};
       width: ${width}px;
       height: ${height}px;
-      background-color: ${bgc};
-      border: ${border};
-      backface-visibility: ${bfv};
+      background-color: ${!!bgc ? bgc : fgStyles.bgc};
+      border: ${!!border ? border : fgStyles.border};
+      backface-visibility: ${!!bfv ? bfv : fgStyles.bfv};
       transform: rotateY(-90deg) translateZ(${tranz}px);
       top: ${top};
    `;
