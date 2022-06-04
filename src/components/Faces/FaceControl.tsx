@@ -1,5 +1,6 @@
 import FaceBack from "./FaceBack";
 import FaceBottom from "./FaceBottom";
+import Face from "./Face";
 import FaceFront from "./FaceFront";
 import FaceLeft from "./FaceLeft";
 import FaceRight from "./FaceRight";
@@ -39,14 +40,15 @@ export const FaceControl = (props: FaceControlProps): any => {
    const DoFaceFront = (): any => {
       if (!!faces && !!faces.front) {
          return (
-            <FaceFront
+            <Face
                width={width}
                height={height}
                depth={depth}
+               faceType='front'
                id='front'
                tranz={tranz}
                // if specified opac / bgc / border will over-ride fgStyles
-               opac={0.5}
+               opac={0.9}
                border={border}
                bgc='#cccc99'
                fgStyles={fgStyles}
@@ -61,9 +63,9 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textAlign,
                   }}
                >
-                  FRONT
+                  FRONT 2
                </div>
-            </FaceFront>
+            </Face>
          );
       } else {
          return <></>;
@@ -134,10 +136,11 @@ export const FaceControl = (props: FaceControlProps): any => {
    const DoFaceBottom = (): any => {
       if (!!faces && !!faces.bottom) {
          return (
-            <FaceBottom
+            <Face
                width={width}
                height={height}
                depth={depth}
+               faceType='bottom'
                id='top'
                tranz={tranz}
                fgStyles={fgStyles}
@@ -153,9 +156,9 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textAlign,
                   }}
                >
-                  BOTTOM
+                  BOTTOM 2
                </div>
-            </FaceBottom>
+            </Face>
          );
       } else {
          return <></>;

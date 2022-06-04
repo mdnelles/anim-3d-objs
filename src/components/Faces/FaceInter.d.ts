@@ -1,12 +1,13 @@
-export interface FaceBottomProps {
+export interface FaceProps {
    bfv?: string | boolean;
    bgc?: string | boolean;
    border?: string | boolean;
-   children?: string | any;
-   fgStyles?: object | any;
+   children?: any;
+   faceType?: any;
+   fgStyles?: any;
    depth?: number | any;
    height?: number | string;
-   id?: string | number;
+   id?: string | number | boolean;
    left?: number;
    margin?: number | string;
    opac?: number | string | boolean | undefined;
