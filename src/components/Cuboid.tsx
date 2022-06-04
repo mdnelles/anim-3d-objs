@@ -1,12 +1,8 @@
 import styled from "styled-components";
-import FaceRight from "./Faces/FaceRight";
-import FaceFront from "./Faces/FaceFront";
-import FaceLeft from "./Faces/FaceLeft";
-import FaceTop from "./Faces/FaceTop";
-import FaceBack from "./Faces/FaceBack";
-import FaceBottom from "./Faces/FaceBottom";
+
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
+import Face from "./Faces/Face";
 
 interface CubeProps {
    anim1?: string;
@@ -24,7 +20,7 @@ const CubeWrapper = styled.div`
 `;
 
 const Cuboid = (props: CubeProps) => {
-   const { anim1 = "", anim2 = "", width = 5, height = 5, border = "" } = props;
+   let { anim1 = "", anim2 = "", width = 5, height = 5, border = "" } = props;
    let tranz: number = +height / 2;
    const color = "#FFF",
       fontWeight: number | string = 800,
@@ -36,11 +32,12 @@ const Cuboid = (props: CubeProps) => {
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <CubeWrapper>
-                  <FaceRight
+                  <Face
                      width={width}
                      height={height}
                      id='right'
                      tranz={tranz}
+                     faceType='right'
                      bgc='blue'
                      opac={0.5}
                      border={border}
@@ -56,12 +53,13 @@ const Cuboid = (props: CubeProps) => {
                      >
                         RIGHT
                      </div>
-                  </FaceRight>
-                  <FaceLeft
+                  </Face>
+                  <Face
                      width={width}
                      height={height}
                      id='left'
                      tranz={tranz}
+                     faceType='left'
                      bgc='black'
                      opac={0.5}
                      border={border}
@@ -77,11 +75,12 @@ const Cuboid = (props: CubeProps) => {
                      >
                         LEFT
                      </div>
-                  </FaceLeft>
-                  <FaceFront
+                  </Face>
+                  <Face
                      width={width}
                      height={height}
                      id='front'
+                     faceType='front'
                      bgc='maroon'
                      tranz={tranz}
                      opac={0.5}
@@ -98,11 +97,12 @@ const Cuboid = (props: CubeProps) => {
                      >
                         FRONT
                      </div>
-                  </FaceFront>
-                  <FaceTop
+                  </Face>
+                  <Face
                      width={width}
                      height={height}
                      id='top'
+                     faceType='top'
                      tranz={tranz}
                      bgc='green'
                      opac={0.5}
@@ -119,11 +119,12 @@ const Cuboid = (props: CubeProps) => {
                      >
                         TOP
                      </div>
-                  </FaceTop>
-                  <FaceBack
+                  </Face>
+                  <Face
                      width={width}
                      height={height}
-                     id='top'
+                     faceType='back'
+                     id='back'
                      tranz={tranz}
                      bgc='red'
                      opac={0.5}
@@ -140,11 +141,12 @@ const Cuboid = (props: CubeProps) => {
                      >
                         BACK
                      </div>
-                  </FaceBack>
-                  <FaceBottom
+                  </Face>
+                  <Face
                      width={width}
                      height={height}
-                     id='top'
+                     faceType='bottom'
+                     id='bottom'
                      tranz={tranz}
                      bgc='purple'
                      opac={0.5}
@@ -161,7 +163,7 @@ const Cuboid = (props: CubeProps) => {
                      >
                         BOTTOM
                      </div>
-                  </FaceBottom>
+                  </Face>
                </CubeWrapper>
             </AnimWrap>
          </AnimWrap>
