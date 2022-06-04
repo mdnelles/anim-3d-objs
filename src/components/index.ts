@@ -1,2 +1,2 @@
 //export * from './CubeFace';
-export * from "./Face";
+export * from "./Faces/Face";

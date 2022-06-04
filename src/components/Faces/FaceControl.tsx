@@ -1,10 +1,4 @@
-import FaceBack from "./FaceBack";
-import FaceBottom from "./FaceBottom";
 import Face from "./Face";
-import FaceFront from "./FaceFront";
-import FaceLeft from "./FaceLeft";
-import FaceRight from "./FaceRight";
-import FaceTop from "./FaceTop";
 
 export interface FaceControlProps {
    anim1?: string;
@@ -74,10 +68,11 @@ export const FaceControl = (props: FaceControlProps): any => {
    const DoFaceBack = (): any => {
       if (!!faces && !!faces.back) {
          return (
-            <FaceBack
+            <Face
                width={width}
                height={height}
                depth={depth}
+               faceType='back'
                id='top'
                tranz={tranz}
                bgc='#cccc99'
@@ -94,9 +89,9 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textAlign,
                   }}
                >
-                  BACK
+                  BACK 2
                </div>
-            </FaceBack>
+            </Face>
          );
       } else {
          return <></>;
@@ -105,10 +100,11 @@ export const FaceControl = (props: FaceControlProps): any => {
    const DoFaceTop = (): any => {
       if (!!faces && !!faces.top) {
          return (
-            <FaceTop
+            <Face
                width={width}
                height={height}
                depth={depth}
+               faceType='top'
                id='top'
                tranz={tranz}
                bgc='#111'
@@ -125,9 +121,9 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textAlign,
                   }}
                >
-                  TOP
+                  TOP 2
                </div>
-            </FaceTop>
+            </Face>
          );
       } else {
          return <></>;
@@ -167,10 +163,11 @@ export const FaceControl = (props: FaceControlProps): any => {
    const DoFaceRight = (): any => {
       if (!!faces && !!faces.right) {
          return (
-            <FaceRight
+            <Face
                width={width}
                height={height}
                depth={depth}
+               faceType='right'
                id='right'
                tranz={tranz}
                border={border}
@@ -186,9 +183,9 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textAlign,
                   }}
                >
-                  RIGHT
+                  R I G H T
                </div>
-            </FaceRight>
+            </Face>
          );
       } else {
          return <></>;
@@ -197,10 +194,11 @@ export const FaceControl = (props: FaceControlProps): any => {
    const DoFaceLeft = (): any => {
       if (!!faces && !!faces.left) {
          return (
-            <FaceLeft
+            <Face
                width={width}
                height={height}
                depth={depth}
+               faceType='left'
                id='left'
                tranz={tranz}
                bgc='black'
@@ -217,9 +215,9 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textAlign,
                   }}
                >
-                  LEFT
+                  L E F T
                </div>
-            </FaceLeft>
+            </Face>
          );
       } else {
          return <></>;
