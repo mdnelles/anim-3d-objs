@@ -12,7 +12,7 @@ const ObjWrapper = styled.div`
    transform-style: preserve-3d;
 `;
 
-const Obj = (props: ObjProps) => {
+const Obj = (props: ObjProps): any => {
    let color = "#eee",
       fontWeight: number | string = 800,
       fontFamily: string = "helvetica",
@@ -30,42 +30,41 @@ const Obj = (props: ObjProps) => {
       depth = 5,
       faces,
       fgStyles,
+      inStyles,
       tranz = (+height / 2) | 0,
    } = props;
    const tmp: any = props;
 
-   const BuildFace = (props: BuildProps): any => {
-      const { faceType, children } = props;
-      if (!!faces && !!faces.front) {
-         return (
-            <Face
-               width={width}
-               height={height}
-               depth={depth}
-               faceType={faceType}
-               id={faceType}
-               tranz={tranz}
-               // if specified opac / bgc / border will over-ride fgStyles
-               fgStyles={fgStyles}
+   const buildFace = (faceType: any, child: any): any => {
+      //const { faceType, child } = props;
+
+      return (
+         <Face
+            width={width}
+            height={height}
+            depth={depth}
+            faceType={faceType}
+            id={faceType}
+            tranz={tranz}
+            // if specified opac / bgc / border will over-ride fgStyles
+            fgStyles={fgStyles}
+            inStyles={inStyles}
+         >
+            <div
+               style={{
+                  color,
+                  fontWeight,
+                  textShadow,
+                  lineHeight,
+                  fontSize,
+                  fontFamily,
+                  textAlign,
+               }}
             >
-               <div
-                  style={{
-                     color,
-                     fontWeight,
-                     textShadow,
-                     lineHeight,
-                     fontSize,
-                     fontFamily,
-                     textAlign,
-                  }}
-               >
-                  {children}
-               </div>
-            </Face>
-         );
-      } else {
-         return <></>;
-      }
+               {child}
+            </div>
+         </Face>
+      );
    };
 
    return (
@@ -73,18 +72,22 @@ const Obj = (props: ObjProps) => {
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <ObjWrapper>
-                  {BuildFace("front", "F R O N T 3")}
-                  {BuildFace("right", "R I G H T 3")}
-                  {BuildFace("back", "B A C K 3")}
-                  {BuildFace("left", "L E F T 3")}
-                  {BuildFace("top", "T O P 3")}
-                  {BuildFace("bottom", "B O T T O M 3")}
-
-                  {/*{DoFaceLeft()}
-                  {DoFaceFront()}
-                  {DoFaceTop()}
-                  {DoFaceBack()}
-                  {DoFaceBottom()}*/}
+                  {!!faces && !!faces.front
+                     ? buildFace("front", "FRONT")
+                     : null}
+                  {!!faces && !!faces.right
+                     ? buildFace("right", "RIGHT")
+                     : null}
+                  {!!faces && !!faces.back
+                     ? buildFace("back", "B A C K 3")
+                     : null}
+                  {!!faces && !!faces.left
+                     ? buildFace("left", "L E F T 3")
+                     : null}
+                  {!!faces && !!faces.top ? buildFace("top", "T O P 3") : null}
+                  {!!faces && !!faces.bottom
+                     ? buildFace("bottom", "B O T T O M 3")
+                     : null}
                </ObjWrapper>
             </AnimWrap>
          </AnimWrap>
