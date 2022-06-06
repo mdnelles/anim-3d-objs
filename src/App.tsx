@@ -1,7 +1,4 @@
-import Cuboid from "./components/Cuboid";
 import Slab from "./components/Slab";
-
-const size: number = 200;
 
 function App() {
    const faceprops = {
