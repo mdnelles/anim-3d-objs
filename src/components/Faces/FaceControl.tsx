@@ -1,3 +1,15 @@
+/*
+
+
+
+
+VOID moved to Obj.BuildFace
+
+
+
+
+*/
+
 import Face from "./Face";
 
 export interface FaceControlProps {
@@ -23,14 +35,54 @@ export interface FaceControlProps {
    tranz: number | string;
 }
 
+export interface FaceBuildProps {
+   faceDirection: "string";
+}
+
 export const FaceControl = (props: FaceControlProps): any => {
    const color = "#eee",
       fontWeight: number | string = 800,
+      fontFamily: string = "helvetica",
       textShadow: string = "1px 1px #555",
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
    const { width, height, depth, border, faces, fgStyles, tranz } = props;
+   const BuildFace = (props: FaceBuildProps): any => {
+      if (!!faces && !!faces.front) {
+         return (
+            <Face
+               width={width}
+               height={height}
+               depth={depth}
+               faceType='front'
+               id='front'
+               tranz={tranz}
+               // if specified opac / bgc / border will over-ride fgStyles
+               opac={0.9}
+               border={border}
+               bgc='#cccc99'
+               fgStyles={fgStyles}
+            >
+               <div
+                  style={{
+                     color,
+                     fontWeight,
+                     textShadow,
+                     lineHeight,
+                     fontSize,
+                     fontFamily,
+                     textAlign,
+                  }}
+               >
+                  FRONT
+               </div>
+            </Face>
+         );
+      } else {
+         return <></>;
+      }
+   };
    const DoFaceFront = (): any => {
       if (!!faces && !!faces.front) {
          return (
@@ -54,10 +106,11 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textShadow,
                      lineHeight,
                      fontSize,
+                     fontFamily,
                      textAlign,
                   }}
                >
-                  FRONT 2
+                  FRONT
                </div>
             </Face>
          );
@@ -86,6 +139,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                      textShadow,
                      lineHeight,
                      fontSize,
+                     fontFamily,
                      textAlign,
                   }}
                >
@@ -118,6 +172,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                      fontWeight,
                      lineHeight,
                      fontSize,
+                     fontFamily,
                      textAlign,
                   }}
                >
@@ -148,6 +203,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                      fontWeight,
                      textShadow,
                      lineHeight,
+                     fontFamily,
                      fontSize,
                      textAlign,
                   }}
@@ -179,6 +235,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                      fontWeight,
                      textShadow,
                      lineHeight,
+                     fontFamily,
                      fontSize,
                      textAlign,
                   }}
