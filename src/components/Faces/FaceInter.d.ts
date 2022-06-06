@@ -45,5 +45,5 @@ export interface ObjProps {
 }
 export interface BuildProps {
    faceType: any;
-   children: any;
+   child: any;
 }
