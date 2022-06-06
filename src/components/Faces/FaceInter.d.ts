@@ -8,6 +8,7 @@ export interface FaceProps {
    depth?: number | any;
    height?: number | string;
    id?: string | number | boolean;
+   inStyles?: object | any;
    left?: number;
    margin?: number | string;
    opac?: number | string | boolean | undefined;
@@ -23,13 +24,9 @@ export interface ObjProps {
    anim2?: string;
    border?: string;
    children: any;
-   faceType: string;
-   width?: number;
-   height?: number | string;
    depth?: number;
-   fgStyles?:
-      | { border: string; bgc: string; opac: number | string }
-      | undefined;
+   faceType: string;
+   fgStyles?: { border: string; bgc: string; opac: number | string } | any;
    faces?:
       | {
            front: boolean;
@@ -40,7 +37,10 @@ export interface ObjProps {
            bottom: boolean;
         }
       | undefined;
-   styles: string | any;
+   inStyles?: object | any;
+   width?: number;
+   height?: number | string;
+
    tranz: number | string;
 }
 export interface BuildProps {

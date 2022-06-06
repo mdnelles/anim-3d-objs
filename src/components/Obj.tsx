@@ -30,6 +30,7 @@ const Obj = (props: ObjProps): any => {
       depth = 5,
       faces,
       fgStyles,
+      inStyles,
       tranz = (+height / 2) | 0,
    } = props;
    const tmp: any = props;
@@ -47,6 +48,7 @@ const Obj = (props: ObjProps): any => {
             tranz={tranz}
             // if specified opac / bgc / border will over-ride fgStyles
             fgStyles={fgStyles}
+            inStyles={inStyles}
          >
             <div
                style={{
@@ -71,10 +73,10 @@ const Obj = (props: ObjProps): any => {
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
                <ObjWrapper>
                   {!!faces && !!faces.front
-                     ? buildFace("front", "F R O N T 3")
+                     ? buildFace("front", "FRONT")
                      : null}
                   {!!faces && !!faces.right
-                     ? buildFace("right", "R I G H T 3")
+                     ? buildFace("right", "RIGHT")
                      : null}
                   {!!faces && !!faces.back
                      ? buildFace("back", "B A C K 3")
