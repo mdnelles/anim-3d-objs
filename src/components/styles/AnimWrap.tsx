@@ -1,5 +1,5 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
+import { AnimStylesProps } from "./Anim";
 
 /////////// X360
 const X360 = keyframes`
@@ -24,15 +24,6 @@ const Y360 = keyframes`
       transform: rotateY(0deg);
    }
 `;
-
-interface AnimStylesProps {
-   duration?: number | string;
-   iterationCount?: number | string;
-   animName?: string;
-   fillMode?: string;
-   children?: any;
-   borderColor?: string;
-}
 
 export const AnimWrap = (props: AnimStylesProps) => {
    const {
