@@ -1,31 +1,9 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { AnimStylesProps } from "./Anim";
-
-/////////// X360
-const X360 = keyframes`
-   from {
-      -webkit-transform: rotateX(360deg);
-      transform: rotateX(360deg);
-   }
-   to {
-      -webkit-transform: rotateX(0deg);
-      transform: rotateX(0deg);
-   }
-}`;
-
-//////// Y360
-const Y360 = keyframes`
-   from {
-      -webkit-transform: rotateY(360deg);
-      transform: rotateY(360deg);
-   }
-   to {
-      -webkit-transform: rotateY(0deg);
-      transform: rotateY(0deg);
-   }
-`;
+import { allAnims } from "./Anims";
 
 export const AnimWrap = (props: AnimStylesProps) => {
+   const { X360, Y360 } = allAnims();
    const {
       duration = 0,
       iterationCount = 0,
