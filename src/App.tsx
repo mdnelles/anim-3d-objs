@@ -1,4 +1,4 @@
-import Obj from "./components/Obj";
+import Cuboid from "./components/Cuboid";
 
 function App() {
    const faceprops = {
@@ -6,7 +6,7 @@ function App() {
       back: false,
       left: true,
       right: true,
-      top: false,
+      top: true,
       bottom: true,
    };
    const fgStyles: object = {
@@ -17,17 +17,16 @@ function App() {
       bfv: "visible",
       fontFamily: "Cochin",
    };
-   const inStyles: object = {
+   const indivStyles: object = {
       // // face individual styles (over rides global)
       bottom: {
-         bgc: "#f00",
          border: "2px dashed #aaa",
          bfv: "visible",
-         opacity: 0.3,
+         opacity: 0.8,
          fontFamily: "Helvetica",
       },
       front: {
-         bgc: "#0f0",
+         bgc: "#ddd",
          border: "1px dashed #aaa",
          bfv: "visible",
          opacity: 0.5,
@@ -37,20 +36,20 @@ function App() {
 
    return (
       <div style={{ padding: 100 }}>
-         <Obj
+         <Cuboid
             anim1='X360'
             anim2='Y360'
             width={260}
-            depth={65}
+            depth={25}
             height={132}
-            inStyles={inStyles}
+            indivStyles={indivStyles}
             faces={faceprops}
             fgStyles={fgStyles}
             faceType={""}
             tranz={""}
          >
             {}
-         </Obj>
+         </Cuboid>
       </div>
    );
 }

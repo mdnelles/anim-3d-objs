@@ -9,7 +9,7 @@ export interface FaceProps {
    depth?: number | any;
    height?: number | string;
    id?: string | number | boolean;
-   inStyles?: object | any;
+   indivStyles?: object | any;
    left?: number;
    margin?: number | string;
    opac?: number | string | boolean | undefined;
@@ -20,7 +20,7 @@ export interface FaceProps {
    width?: number | string;
 }
 
-export interface ObjProps {
+export interface CuboidProps {
    anim1?: string;
    anim2?: string;
    border?: string;
@@ -38,7 +38,7 @@ export interface ObjProps {
            bottom: boolean;
         }
       | undefined;
-   inStyles?: object | any;
+   indivStyles?: object | any;
    width?: number;
    height?: number | string;
 
