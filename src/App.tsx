@@ -5,9 +5,9 @@ function App() {
       front: true,
       back: false,
       left: false,
-      right: true,
+      right: false,
       top: false,
-      bottom: false,
+      bottom: true,
    };
    const fgStyles: object = {
       // global styles
@@ -19,9 +19,19 @@ function App() {
    };
    const inStyles: object = {
       // // face individual styles (over rides global)
-      front: {
+      bottom: {
          bgc: "#f00",
          border: "2px dashed #aaa",
+         bfv: "visible",
+         opacity: 0.3,
+         fontFamily: "Helvetica",
+      },
+      front: {
+         bgc: "#0f0",
+         border: "1px dashed #aaa",
+         bfv: "visible",
+         opacity: 0.5,
+         fontFamily: "Arial, Sans",
       },
    };
 

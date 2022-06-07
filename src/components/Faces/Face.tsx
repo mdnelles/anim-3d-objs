@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaceProps } from "./FaceInter";
+import { FaceProps, VarsProps } from "./FaceInter";
 
 const Face = (props: FaceProps): any => {
    let {
@@ -10,7 +10,9 @@ const Face = (props: FaceProps): any => {
       depth = 10,
       faceType,
       fgStyles = {},
+      fontFamily,
       height = 10,
+      inStyles = false,
       id = false,
       left = 0,
       margin = 0,
@@ -22,15 +24,41 @@ const Face = (props: FaceProps): any => {
       width = 10,
    } = props;
 
+   if (faceType === "bottom") {
+      console.log("inStyles: ");
+      console.log(inStyles);
+      console.log("inStyles[faceType]");
+      console.log(inStyles[faceType]);
+      console.log(inStyles["bottom"].bgc);
+   }
+
    let transform;
+
+   const setCustomVars = (vars: VarsProps, props: FaceProps) => {
+      bfv = !!vars && !!vars.bfv ? vars.bfv : props.bfv;
+      bgc = !!vars && !!vars.bgc ? vars.bgc : props.bgc;
+      opac = !!vars && !!vars.opac ? vars.opac : props.opac;
+      border = !!vars && !!vars.border ? vars.border : props.border;
+      fontFamily =
+         !!vars && !!vars.fontFamily ? vars.fontFamily : props.fontFamily;
+      return { bfv, bgc, border, opac, fontFamily };
+   };
 
    if (faceType === "bottom") {
       tranz = +height - +depth / 2;
       height = +depth;
       transform = `transform: rotateX(-90deg) translateZ(${tranz}px);`;
+      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
+         inStyles["bottom"],
+         props
+      );
    } else if (faceType === "front") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(0deg) translateZ(${tranz}px);`;
+      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
+         inStyles["front"],
+         props
+      );
    } else if (faceType === "back") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(180deg) translateZ(${tranz}px);`;
