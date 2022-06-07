@@ -12,7 +12,7 @@ const Face = (props: FaceProps): any => {
       fgStyles = {},
       fontFamily,
       height = 10,
-      inStyles = false,
+      indivStyles = false,
       id = false,
       left = 0,
       margin = 0,
@@ -23,14 +23,6 @@ const Face = (props: FaceProps): any => {
       tranz = 80,
       width = 10,
    } = props;
-
-   if (faceType === "bottom") {
-      console.log("inStyles: ");
-      console.log(inStyles);
-      console.log("inStyles[faceType]");
-      console.log(inStyles[faceType]);
-      console.log(inStyles["bottom"].bgc);
-   }
 
    let transform;
 
@@ -49,14 +41,14 @@ const Face = (props: FaceProps): any => {
       height = +depth;
       transform = `transform: rotateX(-90deg) translateZ(${tranz}px);`;
       let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         inStyles["bottom"],
+         indivStyles["bottom"],
          props
       );
    } else if (faceType === "front") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(0deg) translateZ(${tranz}px);`;
       let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         inStyles["front"],
+         indivStyles["front"],
          props
       );
    } else if (faceType === "back") {

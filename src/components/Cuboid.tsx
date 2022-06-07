@@ -2,17 +2,17 @@ import styled from "styled-components";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
 import { FaceControl } from "./Faces/FaceControl";
-import { ObjProps, BuildProps } from "./Faces/FaceInter";
+import { CuboidProps, BuildProps } from "./Faces/FaceInter";
 import Face from "./Faces/Face";
 
-const ObjWrapper = styled.div`
+const CuboidWrapper = styled.div`
    width: 100%;
    height: 100%;
    position: relative;
    transform-style: preserve-3d;
 `;
 
-const Obj = (props: ObjProps): any => {
+const Cuboid = (props: CuboidProps): any => {
    let color = "#eee",
       fontWeight: number | string = 800,
       fontFamily: string = "helvetica",
@@ -29,7 +29,7 @@ const Obj = (props: ObjProps): any => {
       depth = 5,
       faces,
       fgStyles,
-      inStyles,
+      indivStyles,
       tranz = (+height / 2) | 0,
    } = props;
    const tmp: any = props;
@@ -47,7 +47,7 @@ const Obj = (props: ObjProps): any => {
             tranz={tranz}
             // if specified opac / bgc / border will over-ride fgStyles
             fgStyles={fgStyles}
-            inStyles={inStyles}
+            indivStyles={indivStyles}
          >
             <div
                style={{
@@ -70,28 +70,24 @@ const Obj = (props: ObjProps): any => {
       <SceneStyle width={width} height={height}>
          <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
             <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
-               <ObjWrapper>
+               <CuboidWrapper>
                   {!!faces && !!faces.front
                      ? buildFace("front", "FRONT")
                      : null}
                   {!!faces && !!faces.right
                      ? buildFace("right", "RIGHT")
                      : null}
-                  {!!faces && !!faces.back
-                     ? buildFace("back", "B A C K 3")
-                     : null}
-                  {!!faces && !!faces.left
-                     ? buildFace("left", "L E F T 3")
-                     : null}
-                  {!!faces && !!faces.top ? buildFace("top", "T O P 3") : null}
+                  {!!faces && !!faces.back ? buildFace("back", "BACK") : null}
+                  {!!faces && !!faces.left ? buildFace("left", "LEFT") : null}
+                  {!!faces && !!faces.top ? buildFace("top", "TOP") : null}
                   {!!faces && !!faces.bottom
-                     ? buildFace("bottom", "B O T T O M 3")
+                     ? buildFace("bottom", "BOTTOM")
                      : null}
-               </ObjWrapper>
+               </CuboidWrapper>
             </AnimWrap>
          </AnimWrap>
       </SceneStyle>
    );
 };
 
-export default Obj;
+export default Cuboid;

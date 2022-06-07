@@ -3,7 +3,7 @@
 
 
 
-VOID moved to Obj.BuildFace
+VOID moved to Cuboid.BuildFace
 
 
 
