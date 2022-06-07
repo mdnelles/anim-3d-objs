@@ -5,6 +5,7 @@ export interface FaceProps {
    children?: any;
    faceType?: any;
    fgStyles?: any;
+   fontFamily?: string | any;
    depth?: number | any;
    height?: number | string;
    id?: string | number | boolean;
@@ -46,4 +47,12 @@ export interface ObjProps {
 export interface BuildProps {
    faceType: any;
    child: any;
+}
+
+export interface VarsProps {
+   bfv?: string | any;
+   bgc?: string | any;
+   border?: string | any;
+   opac?: string | any;
+   fontFamily?: string | any;
 }

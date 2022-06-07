@@ -21,7 +21,6 @@ const Obj = (props: ObjProps): any => {
       fontSize: number | string = 20,
       textAlign: string | any = "center";
 
-   //const { width, height, depth, border, faces, fgStyles, tranz } = props;
    let {
       anim1 = "",
       anim2 = "",
