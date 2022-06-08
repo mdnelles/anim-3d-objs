@@ -37,8 +37,10 @@ function App() {
    return (
       <div style={{ padding: 100 }}>
          <Cuboid
-            anim1='X360'
-            anim2='Y360'
+            anim1='wobY'
+            anim2='wobX'
+            anim1duration={5}
+            anim2duration={18}
             width={260}
             depth={25}
             height={132}

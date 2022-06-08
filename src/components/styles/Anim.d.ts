@@ -5,4 +5,6 @@ export interface AnimStylesProps {
    fillMode?: string;
    children?: any;
    borderColor?: string;
+   xdegs?: number | undefined;
+   ydegs?: number | undefined;
 }

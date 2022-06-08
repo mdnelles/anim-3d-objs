@@ -23,6 +23,8 @@ export interface FaceProps {
 export interface CuboidProps {
    anim1?: string;
    anim2?: string;
+   anim1duration?: number;
+   anim2duration?: number;
    border?: string;
    children: any;
    depth?: number;

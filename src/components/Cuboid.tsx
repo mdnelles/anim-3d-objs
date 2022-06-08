@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
-import { FaceControl } from "./Faces/FaceControl";
 import { CuboidProps, BuildProps } from "./Faces/FaceInter";
 import Face from "./Faces/Face";
 
@@ -24,6 +23,8 @@ const Cuboid = (props: CuboidProps): any => {
    let {
       anim1 = "",
       anim2 = "",
+      anim1duration = 5,
+      anim2duration = 5,
       width = 5,
       height = 5,
       depth = 5,
@@ -68,8 +69,18 @@ const Cuboid = (props: CuboidProps): any => {
 
    return (
       <SceneStyle width={width} height={height}>
-         <AnimWrap duration={15} iterationCount='infinite' animName={anim1}>
-            <AnimWrap duration={5} iterationCount='infinite' animName={anim2}>
+         <AnimWrap
+            duration={anim1duration}
+            iterationCount='infinite'
+            animName={anim1}
+            xdegs={70}
+         >
+            <AnimWrap
+               duration={anim2duration}
+               iterationCount='infinite'
+               animName={anim2}
+               ydegs={70}
+            >
                <CuboidWrapper>
                   {!!faces && !!faces.front
                      ? buildFace("front", "FRONT")
