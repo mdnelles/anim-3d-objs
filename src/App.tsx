@@ -9,25 +9,35 @@ function App() {
       top: true,
       bottom: true,
    };
-   const fgStyles: object = {
+   const globalStyles: object = {
       // global styles
-      border: "1px solid #111",
-      bgc: "#555",
+      border: "1px solid #00f",
+      bgc: "#009",
       opac: 0.7,
       bfv: "visible",
       fontFamily: "Cochin",
    };
+   const animSpecs: object = {
+      anim: "wobX",
+      anim2: "wobY",
+      anim1duration: 5,
+      anim2duration: 11,
+      anim1count: "infinte",
+      anim1low: "-83",
+      anim2hi: "85",
+      anim2low: "-81",
+      anim2count: "infinite",
+   };
    const indivStyles: object = {
       // // face individual styles (over rides global)
       bottom: {
-         border: "2px dashed #aaa",
          bfv: "visible",
          opacity: 0.8,
          fontFamily: "Helvetica",
       },
       front: {
-         bgc: "#ddd",
-         border: "1px dashed #aaa",
+         border: "1px solid #f00",
+         bgc: "#f00",
          bfv: "visible",
          opacity: 0.5,
          fontFamily: "Arial, Sans",
@@ -37,16 +47,13 @@ function App() {
    return (
       <div style={{ padding: 100 }}>
          <Cuboid
-            anim1='wobY'
-            anim2='wobX'
-            anim1duration={5}
-            anim2duration={18}
             width={260}
             depth={25}
             height={132}
+            animSpecs={animSpecs}
             indivStyles={indivStyles}
             faces={faceprops}
-            fgStyles={fgStyles}
+            globalStyles={globalStyles}
             faceType={""}
             tranz={""}
          >

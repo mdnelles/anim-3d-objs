@@ -4,7 +4,7 @@ export interface FaceProps {
    border?: string | boolean;
    children?: any;
    faceType?: any;
-   fgStyles?: any;
+   globalStyles?: any;
    fontFamily?: string | any;
    depth?: number | any;
    height?: number | string;
@@ -21,15 +21,27 @@ export interface FaceProps {
 }
 
 export interface CuboidProps {
-   anim1?: string;
-   anim2?: string;
-   anim1duration?: number;
-   anim2duration?: number;
+   animSpecs?:
+      | {
+           anim1?: string | undefined;
+           anim1duration?: string | undefined;
+           anim1low?: number | undefined; // rotation degrees
+           anim1hi?: number | undefined; // rotation degrees
+           anim1count?: number | string | undefined;
+           anim2?: string | undefined;
+           anim2duration?: string | undefined;
+           anim2hi?: number | undefined; // rotation degrees
+           anim2low?: number | undefined; // rotation degrees
+           anim2count?: number | string | undefined;
+        }
+      | undefined;
    border?: string;
    children: any;
    depth?: number;
    faceType: string;
-   fgStyles?: { border: string; bgc: string; opac: number | string } | any;
+   globalStyles?:
+      | { border?: string; bgc?: string; opac?: number | string }
+      | any;
    faces?:
       | {
            front: boolean;

@@ -21,15 +21,12 @@ const Cuboid = (props: CuboidProps): any => {
       textAlign: string | any = "center";
 
    let {
-      anim1 = "",
-      anim2 = "",
-      anim1duration = 5,
-      anim2duration = 5,
+      animSpecs = {},
       width = 5,
       height = 5,
       depth = 5,
       faces,
-      fgStyles,
+      globalStyles,
       indivStyles,
       tranz = (+height / 2) | 0,
    } = props;
@@ -46,8 +43,8 @@ const Cuboid = (props: CuboidProps): any => {
             faceType={faceType}
             id={faceType}
             tranz={tranz}
-            // if specified opac / bgc / border will over-ride fgStyles
-            fgStyles={fgStyles}
+            // if specified opac / bgc / border will over-ride globalStyles
+            globalStyles={globalStyles}
             indivStyles={indivStyles}
          >
             <div
@@ -70,15 +67,15 @@ const Cuboid = (props: CuboidProps): any => {
    return (
       <SceneStyle width={width} height={height}>
          <AnimWrap
-            duration={anim1duration}
-            iterationCount='infinite'
-            animName={anim1}
+            duration={animSpecs.anim1duration}
+            iterationCount={animSpecs.anim1}
+            animName={animSpecs.anim1}
             xdegs={70}
          >
             <AnimWrap
-               duration={anim2duration}
+               duration={animSpecs.anim2duration}
                iterationCount='infinite'
-               animName={anim2}
+               animName={animSpecs.anim2}
                ydegs={70}
             >
                <CuboidWrapper>

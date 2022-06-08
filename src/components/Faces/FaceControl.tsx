@@ -19,7 +19,7 @@ export interface FaceControlProps {
    width?: number;
    height?: number | string;
    depth?: number;
-   fgStyles?:
+   globalStyles?:
       | { border: string; bgc: string; opac: number | string }
       | undefined;
    faces?:
@@ -47,7 +47,7 @@ export const FaceControl = (props: FaceControlProps): any => {
       lineHeight: number = 1.2,
       fontSize: number | string = 20,
       textAlign: string | any = "center";
-   const { width, height, depth, border, faces, fgStyles, tranz } = props;
+   const { width, height, depth, border, faces, globalStyles, tranz } = props;
    const BuildFace = (props: FaceBuildProps): any => {
       if (!!faces && !!faces.front) {
          return (
@@ -58,11 +58,11 @@ export const FaceControl = (props: FaceControlProps): any => {
                faceType='front'
                id='front'
                tranz={tranz}
-               // if specified opac / bgc / border will over-ride fgStyles
+               // if specified opac / bgc / border will over-ride globalStyles
                opac={0.9}
                border={border}
                bgc='#cccc99'
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
             >
                <div
                   style={{
@@ -93,11 +93,11 @@ export const FaceControl = (props: FaceControlProps): any => {
                faceType='front'
                id='front'
                tranz={tranz}
-               // if specified opac / bgc / border will over-ride fgStyles
+               // if specified opac / bgc / border will over-ride globalStyles
                opac={0.9}
                border={border}
                bgc='#cccc99'
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
             >
                <div
                   style={{
@@ -129,7 +129,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='top'
                tranz={tranz}
                bgc='#cccc99'
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
                border={border}
             >
                <div
@@ -162,7 +162,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='top'
                tranz={tranz}
                bgc='#111'
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
                border={border}
             >
                <div
@@ -194,7 +194,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                faceType='bottom'
                id='top'
                tranz={tranz}
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
                border={border}
             >
                <div
@@ -227,7 +227,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='right'
                tranz={tranz}
                border={border}
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
             >
                <div
                   style={{
@@ -259,7 +259,7 @@ export const FaceControl = (props: FaceControlProps): any => {
                id='left'
                tranz={tranz}
                bgc='black'
-               fgStyles={fgStyles}
+               globalStyles={globalStyles}
                border={border}
             >
                <div
