@@ -9,7 +9,7 @@ const Face = (props: FaceProps): any => {
       children,
       depth = 10,
       faceType,
-      fgStyles = {},
+      globalStyles = {},
       fontFamily,
       height = 10,
       indivStyles = false,
@@ -87,16 +87,16 @@ const Face = (props: FaceProps): any => {
    }
 
    const Specs: any = styled.div`
-      opacity: ${!!opac ? opac : fgStyles.opac};
+      opacity: ${!!opac ? opac : globalStyles.opac};
       position: ${position};
       left: ${left};
       margin: ${margin};
       padding: ${padding};
       width: ${width}px;
       height: ${height}px;
-      background-color: ${!!bgc ? bgc : fgStyles.bgc};
-      border: ${!!border ? border : fgStyles.border};
-      backface-visibility: ${!!bfv ? bfv : fgStyles.bfv};
+      background-color: ${!!bgc ? bgc : globalStyles.bgc};
+      border: ${!!border ? border : globalStyles.border};
+      backface-visibility: ${!!bfv ? bfv : globalStyles.bfv};
       ${transform}
       top: ${top};
    `;
