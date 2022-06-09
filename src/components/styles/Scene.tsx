@@ -16,18 +16,17 @@ export const SceneStyle = (props: SceneStyleProps) => {
       zIndex = 10,
       children = {},
    } = props;
-
+   console.log("z-index:" + zIndex);
    const SceneStyleDiv: any = styled.div`
       width: ${width}px;
       height: ${height}px;
       perspective: 600px;
       perspective-origin: ${perspectiveOrigin};
-      z-index: ${zIndex};
    `;
 
    return (
-      <>
+      <div style={{ zIndex }}>
          <SceneStyleDiv>{children}</SceneStyleDiv>
-      </>
+      </div>
    );
 };
