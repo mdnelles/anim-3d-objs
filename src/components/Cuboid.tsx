@@ -29,6 +29,8 @@ const Cuboid = (props: CuboidProps): any => {
       globalStyles,
       indivStyles,
       tranz = (+height / 2) | 0,
+      perspectiveOrigin,
+      zIndex,
    } = props;
    const tmp: any = props;
 
@@ -65,7 +67,12 @@ const Cuboid = (props: CuboidProps): any => {
    };
 
    return (
-      <SceneStyle width={width} height={height}>
+      <SceneStyle
+         width={width}
+         height={height}
+         perspectiveOrigin={perspectiveOrigin}
+         zIndex={zIndex}
+      >
          <AnimWrap
             duration={animSpecs.anim1duration}
             iterationCount={animSpecs.anim1count}
