@@ -10,8 +10,8 @@ export const AnimWrap = (props: AnimStylesProps) => {
       fillMode = "forward",
       children = "",
       borderColor = "",
-      xdegs,
-      ydegs,
+      animLow = 0,
+      animHi = 0,
    } = props;
 
    const {
@@ -32,7 +32,8 @@ export const AnimWrap = (props: AnimStylesProps) => {
       fwdy918,
       fwdy1827,
       fwdy2736,
-   } = allAnims({ xdegs, ydegs });
+      noAnim,
+   } = allAnims({ animLow, animHi });
 
    const AnimWrapDiv: any = styled.div`
       width: 100%;

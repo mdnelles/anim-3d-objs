@@ -68,15 +68,17 @@ const Cuboid = (props: CuboidProps): any => {
       <SceneStyle width={width} height={height}>
          <AnimWrap
             duration={animSpecs.anim1duration}
-            iterationCount={animSpecs.anim1}
+            iterationCount={animSpecs.anim1count}
             animName={animSpecs.anim1}
-            xdegs={70}
+            animLow={animSpecs.anim1low}
+            animHi={animSpecs.anim1hi}
          >
             <AnimWrap
                duration={animSpecs.anim2duration}
-               iterationCount='infinite'
+               iterationCount={animSpecs.anim2count}
                animName={animSpecs.anim2}
-               ydegs={70}
+               animLow={animSpecs.anim2low}
+               animHi={animSpecs.anim2hi}
             >
                <CuboidWrapper>
                   {!!faces && !!faces.front
