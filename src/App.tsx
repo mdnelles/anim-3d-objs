@@ -20,8 +20,8 @@ function App() {
    const animSpecs: object = {
       anim: "wobX",
       anim2: "wobY",
-      anim1duration: 5,
-      anim2duration: 11,
+      anim1duration: 2,
+      anim2duration: 5,
       anim1count: "infinte",
       anim1low: "-83",
       anim2hi: "85",
@@ -48,14 +48,14 @@ function App() {
       <div style={{ padding: 100 }}>
          <Cuboid
             width={260}
-            depth={25}
-            height={132}
+            depth={260}
+            height={62}
+            perspectiveOrigin='150% 90%'
+            zIndex={1}
             animSpecs={animSpecs}
             indivStyles={indivStyles}
             faces={faceprops}
             globalStyles={globalStyles}
-            faceType={""}
-            tranz={""}
          >
             {}
          </Cuboid>

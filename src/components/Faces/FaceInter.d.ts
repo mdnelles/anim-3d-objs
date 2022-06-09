@@ -35,10 +35,8 @@ export interface CuboidProps {
            anim2count?: number | string | undefined;
         }
       | undefined;
-   border?: string;
    children: any;
    depth?: number;
-   faceType: string;
    globalStyles?:
       | { border?: string; bgc?: string; opac?: number | string }
       | any;
@@ -52,11 +50,13 @@ export interface CuboidProps {
            bottom: boolean;
         }
       | undefined;
-   indivStyles?: object | any;
-   width?: number;
-   height?: number | string;
 
-   tranz: number | string;
+   height?: number | string;
+   indivStyles?: object | string | undefined;
+   perspectiveOrigin?: string | undefined;
+   tranz?: number | undefined;
+   width?: number;
+   zIndex?: number | undefined;
 }
 export interface BuildProps {
    faceType: any;
