@@ -1,12 +1,12 @@
 import { keyframes } from "styled-components";
 
 interface AllAnimsProps {
-   xdegs?: number;
-   ydegs?: number;
+   animLow?: number;
+   animHi?: number;
 }
 
 export const allAnims = (props: AllAnimsProps) => {
-   const { xdegs = 45, ydegs = 45 } = props;
+   const { animLow = 0, animHi = 0 } = props;
 
    const X360 = keyframes`
    from {
@@ -40,38 +40,30 @@ export const allAnims = (props: AllAnimsProps) => {
 
    const wobY = keyframes`
     0% {
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
+        -webkit-transform: rotateY(${animLow}deg);
+        transform: rotateY(${animLow}deg);
     }
-    25% {
-        -webkit-transform: rotateY(-${ydegs}deg);
-        transform: rotateY(-${ydegs}deg);
-    }
-    75% {
-        -webkit-transform: rotateY(${ydegs}deg);
-        transform: rotateY(${ydegs}deg);
+    50% {
+        -webkit-transform: rotateY(${animHi}deg);
+        transform: rotateY(${animHi}deg);
     }
     100% {
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
+        -webkit-transform: rotateY(${animLow}deg);
+        transform: rotateY(${animLow}deg);
     }`;
 
    const wobX = keyframes`
     0% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
+        -webkit-transform: rotateX(${animLow}deg);
+        transform: rotateX(${animLow}deg);
     }
-    25% {
-        -webkit-transform: rotateX(-${xdegs}deg);
-        transform: rotateX(-${xdegs}deg);
-    }
-    75% {
-        -webkit-transform: rotateX(${xdegs}deg);
-        transform: rotateX(${xdegs}deg);
+    50% {
+        -webkit-transform: rotateX(${animHi}deg);
+        transform: rotateX(${animHi}deg);
     }
     100% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
+        -webkit-transform: rotateX(${animLow}deg);
+        transform: rotateX(${animLow}deg);
     }`;
    /* ============================== x-axis 0-180 >180 - 360 */
    const fwdx018 = keyframes`
@@ -188,6 +180,8 @@ export const allAnims = (props: AllAnimsProps) => {
        transform: rotateY(-360deg);
    }`;
 
+   const noAnim = keyframes``;
+
    return {
       X360,
       Y360,
@@ -206,5 +200,6 @@ export const allAnims = (props: AllAnimsProps) => {
       fwdy918,
       fwdy1827,
       fwdy2736,
+      noAnim,
    };
 };
