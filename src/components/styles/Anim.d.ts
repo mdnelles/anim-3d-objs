@@ -7,4 +7,5 @@ export interface AnimStylesProps {
    borderColor?: string;
    animLow?: number | undefined;
    animHi?: number | undefined;
+   animDirection?: string | undefined;
 }
