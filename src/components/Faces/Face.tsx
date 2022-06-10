@@ -54,10 +54,18 @@ const Face = (props: FaceProps): any => {
    } else if (faceType === "back") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(180deg) translateZ(${tranz}px);`;
+      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
+         indivStyles["back"],
+         props
+      );
    } else if (faceType === "top") {
       height = +depth;
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateX(90deg) translateZ(${tranz}px);`;
+      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
+         indivStyles["top"],
+         props
+      );
    } else if (faceType === "right") {
       if (height > width && !depth) {
          tranz = -(+height / 2 - +width);
@@ -70,6 +78,10 @@ const Face = (props: FaceProps): any => {
          width = +depth;
       }
       transform = `transform: rotateY(90deg) translateZ(${tranz}px);`;
+      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
+         indivStyles["right"],
+         props
+      );
    } else if (faceType === "left") {
       if (height > width && !depth) {
          console.log(1);
@@ -84,6 +96,10 @@ const Face = (props: FaceProps): any => {
          width = +depth;
       }
       transform = `transform: rotateY(-90deg) translateZ(${tranz}px);`;
+      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
+         indivStyles["left"],
+         props
+      );
    }
 
    const Specs: any = styled.div`
