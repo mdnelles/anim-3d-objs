@@ -11,7 +11,7 @@ The program does the leg work with regard to calculating translationZ depth and 
 Install sequence
 
 ```
-gitr clone <thisrepo>
+git clone <thisrepo>
 npm i
 npm run start
 ```
