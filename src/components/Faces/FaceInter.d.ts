@@ -33,6 +33,8 @@ export interface CuboidProps {
            anim2hi?: number | undefined; // rotation degrees
            anim2low?: number | undefined; // rotation degrees
            anim2count?: number | string | undefined;
+           anim1direction?: string | undefined;
+           anim2direction?: string | undefined;
         }
       | undefined;
    children: any;

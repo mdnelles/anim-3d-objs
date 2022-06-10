@@ -79,6 +79,7 @@ const Cuboid = (props: CuboidProps): any => {
             animName={animSpecs.anim1}
             animLow={animSpecs.anim1low}
             animHi={animSpecs.anim1hi}
+            animDirection={animSpecs.anim1direction}
          >
             <AnimWrap
                duration={animSpecs.anim2duration}
@@ -86,6 +87,7 @@ const Cuboid = (props: CuboidProps): any => {
                animName={animSpecs.anim2}
                animLow={animSpecs.anim2low}
                animHi={animSpecs.anim2hi}
+               animDirection={animSpecs.anim2direction}
             >
                <CuboidWrapper>
                   {!!faces && !!faces.front

@@ -12,6 +12,7 @@ export const AnimWrap = (props: AnimStylesProps) => {
       borderColor = "",
       animLow = 0,
       animHi = 0,
+      animDirection = "normal",
    } = props;
 
    const {
@@ -49,6 +50,8 @@ export const AnimWrap = (props: AnimStylesProps) => {
       animation-name: ${eval(animName)};
       -webkit-animation-fill-mode: ${fillMode};
       animation-fill-mode: ${fillMode};
+      animation-direction: ${animDirection};
+      -webkit-animation-direction: ${animDirection};
    `;
 
    return <AnimWrapDiv>{children}</AnimWrapDiv>;
