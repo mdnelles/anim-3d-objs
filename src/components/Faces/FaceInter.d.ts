@@ -60,10 +60,6 @@ export interface CuboidProps {
    width?: number;
    zIndex?: number | undefined;
 }
-export interface BuildProps {
-   faceType: any;
-   child: any;
-}
 
 export interface VarsProps {
    bfv?: string | any;

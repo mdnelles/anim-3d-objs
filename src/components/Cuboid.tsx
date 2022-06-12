@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import React from "react";
 import { AnimWrap } from "./styles/AnimWrap";
 import { SceneStyle } from "./styles/Scene";
-import { CuboidProps, BuildProps } from "./Faces/FaceInter";
+import { CuboidProps } from "./Faces/FaceInter";
 import Face from "./Faces/Face";
 
 const CuboidWrapper = styled.div`
@@ -32,7 +33,6 @@ const Cuboid = (props: CuboidProps): any => {
       perspectiveOrigin,
       zIndex,
    } = props;
-   const tmp: any = props;
 
    const buildFace = (faceType: any, child: any): any => {
       //const { faceType, child } = props;

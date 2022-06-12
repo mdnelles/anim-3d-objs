@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 import { FaceProps, VarsProps } from "./FaceInter";
 
 const Face = (props: FaceProps): any => {
@@ -13,7 +14,6 @@ const Face = (props: FaceProps): any => {
       fontFamily,
       height = 10,
       indivStyles = false,
-      id = false,
       left = 0,
       margin = 0,
       opac = false,
@@ -26,46 +26,34 @@ const Face = (props: FaceProps): any => {
 
    let transform;
 
-   const setCustomVars = (vars: VarsProps, props: FaceProps) => {
+   const setCustomVars = (vars: VarsProps, props: FaceProps): boolean => {
       bfv = !!vars && !!vars.bfv ? vars.bfv : props.bfv;
       bgc = !!vars && !!vars.bgc ? vars.bgc : props.bgc;
       opac = !!vars && !!vars.opac ? vars.opac : props.opac;
       border = !!vars && !!vars.border ? vars.border : props.border;
       fontFamily =
          !!vars && !!vars.fontFamily ? vars.fontFamily : props.fontFamily;
-      return { bfv, bgc, border, opac, fontFamily };
+      return true;
    };
 
    if (faceType === "bottom") {
       tranz = +height - +depth / 2;
       height = +depth;
       transform = `transform: rotateX(-90deg) translateZ(${tranz}px);`;
-      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         indivStyles["bottom"],
-         props
-      );
+      setCustomVars(indivStyles["bottom"], props);
    } else if (faceType === "front") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(0deg) translateZ(${tranz}px);`;
-      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         indivStyles["front"],
-         props
-      );
+      setCustomVars(indivStyles["front"], props);
    } else if (faceType === "back") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(180deg) translateZ(${tranz}px);`;
-      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         indivStyles["back"],
-         props
-      );
+      setCustomVars(indivStyles["back"], props);
    } else if (faceType === "top") {
       height = +depth;
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateX(90deg) translateZ(${tranz}px);`;
-      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         indivStyles["top"],
-         props
-      );
+      setCustomVars(indivStyles["top"], props);
    } else if (faceType === "right") {
       if (height > width && !depth) {
          tranz = -(+height / 2 - +width);
@@ -78,11 +66,8 @@ const Face = (props: FaceProps): any => {
          width = +depth;
       }
       transform = `transform: rotateY(90deg) translateZ(${tranz}px);`;
-      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         indivStyles["right"],
-         props
-      );
-   } else if (faceType === "left") {
+      setCustomVars(indivStyles["right"], props);
+   } else {
       if (height > width && !depth) {
          console.log(1);
          tranz = -(+height / 2 - +width);
@@ -96,10 +81,7 @@ const Face = (props: FaceProps): any => {
          width = +depth;
       }
       transform = `transform: rotateY(-90deg) translateZ(${tranz}px);`;
-      let { bfv, bgc, border, opac, fontFamily } = setCustomVars(
-         indivStyles["left"],
-         props
-      );
+      setCustomVars(indivStyles["left"], props);
    }
 
    const Specs: any = styled.div`
@@ -109,6 +91,7 @@ const Face = (props: FaceProps): any => {
       margin: ${margin};
       padding: ${padding};
       width: ${width}px;
+      font-family:${fontFamily}
       height: ${height}px;
       background-color: ${!!bgc ? bgc : globalStyles.bgc};
       border: ${!!border ? border : globalStyles.border};
