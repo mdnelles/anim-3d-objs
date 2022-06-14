@@ -63,9 +63,9 @@ function App() {
    return (
       <div style={{ padding: 150 }}>
          <Cuboid
-            width={260}
-            depth={260}
-            height={92}
+            width={300}
+            height={200}
+            depth={100}
             perspectiveOrigin='50% 50%'
             zIndex={10}
             animSpecs={animSpecs}
