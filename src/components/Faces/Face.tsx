@@ -21,7 +21,7 @@ const Face = (props: FaceProps): any => {
       position = "absolute",
       top = 0,
       tranz = 80,
-      width = 10,
+      width = 100,
    } = props;
 
    let transform;
@@ -41,6 +41,11 @@ const Face = (props: FaceProps): any => {
       height = +depth;
       transform = `transform: rotateX(-90deg) translateZ(${tranz}px);`;
       setCustomVars(indivStyles["bottom"], props);
+   } else if (faceType === "top") {
+      height = +depth;
+      if (!!depth) tranz = +depth / 2;
+      transform = `transform: rotateX(90deg) translateZ(${tranz}px);`;
+      setCustomVars(indivStyles["top"], props);
    } else if (faceType === "front") {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(0deg) translateZ(${tranz}px);`;
@@ -49,11 +54,6 @@ const Face = (props: FaceProps): any => {
       if (!!depth) tranz = +depth / 2;
       transform = `transform: rotateY(180deg) translateZ(${tranz}px);`;
       setCustomVars(indivStyles["back"], props);
-   } else if (faceType === "top") {
-      height = +depth;
-      if (!!depth) tranz = +depth / 2;
-      transform = `transform: rotateX(90deg) translateZ(${tranz}px);`;
-      setCustomVars(indivStyles["top"], props);
    } else if (faceType === "right") {
       if (height > width && !depth) {
          tranz = -(+height / 2 - +width);
@@ -91,7 +91,7 @@ const Face = (props: FaceProps): any => {
       margin: ${margin};
       padding: ${padding};
       width: ${width}px;
-      font-family:${fontFamily}
+      font-family: ${fontFamily};
       height: ${height}px;
       background-color: ${!!bgc ? bgc : globalStyles.bgc};
       border: ${!!border ? border : globalStyles.border};
