@@ -63,7 +63,7 @@ function App() {
    return (
       <div style={{ padding: 150 }}>
          <Cuboid
-            width={260}
+            width={160}
             depth={260}
             height={92}
             perspectiveOrigin='50% 50%'
