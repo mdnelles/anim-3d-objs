@@ -17,7 +17,7 @@ npm run start
 ```
 
 ## Examples
-All sided simple https://codesandbox.io/s/busy-albattani-sdy1q0?file=/package.json
+All sided simple https://codesandbox.io/s/busy-albattani-sdy1q0
 
 
 
