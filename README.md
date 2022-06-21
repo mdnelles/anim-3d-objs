@@ -16,7 +16,10 @@ npm i
 npm run start
 ```
 
-Create  webpack.config.js
+## Examples
+All sided simple https://codesandbox.io/s/busy-albattani-sdy1q0?file=/package.json
+
+
 
 ## Authors
 
