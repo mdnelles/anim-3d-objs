@@ -11,7 +11,7 @@ The program does the leg work with regard to calculating translationZ depth and 
 Install sequence
 
 ```
-git clone <thisrepo>
+git clone https://github.com/mdnelles/anim-3d-objs.git
 npm i
 npm run start
 ```
