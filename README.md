@@ -18,6 +18,7 @@ npm run start
 
 ## Examples
 All sided simple https://codesandbox.io/s/busy-albattani-sdy1q0
+Two sided simple https://codesandbox.io/s/stupefied-alex-9wognm
 
 
 
