@@ -86,7 +86,8 @@ will produce the following
 
 ![Logo](https://raw.githubusercontent.com/mdnelles/objs-local/main/img.png?token=GHSAT0AAAAAABQVNJ4VATWQM4SI3LXSTDZWYVDOL7Q)
 
-#Face Format
+##Face Format
+for things like `background-image: url("myImg.png");` they can be done in `moreStyles` argument.
 ```
    const Specs: any = styled.div`
       opacity: ${!!opac ? opac : globalStyles.opac};
