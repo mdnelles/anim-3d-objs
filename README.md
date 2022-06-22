@@ -86,3 +86,22 @@ will produce the following
 
 ![Logo](https://raw.githubusercontent.com/mdnelles/objs-local/main/img.png?token=GHSAT0AAAAAABQVNJ4VATWQM4SI3LXSTDZWYVDOL7Q)
 
+#Face Format
+```
+   const Specs: any = styled.div`
+      opacity: ${!!opac ? opac : globalStyles.opac};
+      position: ${position};
+      left: ${left};
+      margin: ${margin};
+      padding: ${padding};
+      width: ${width}px;
+      font-family: ${fontFamily};
+      height: ${height}px;
+      background-color: ${!!bgc ? bgc : globalStyles.bgc};
+      border: ${!!border ? border : globalStyles.border};
+      backface-visibility: ${!!bfv ? bfv : globalStyles.bfv};
+      ${transform}
+      top: ${top};
+      ${moreStyles}
+   `;
+```
