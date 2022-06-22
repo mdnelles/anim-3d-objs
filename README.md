@@ -17,10 +17,13 @@ npm run start
 ```
 
 ## Examples
-All sided simple https://codesandbox.io/s/busy-albattani-sdy1q0
-Two sided simple https://codesandbox.io/s/stupefied-alex-9wognm
+All sided simple https://codesandbox.io/s/anim-3d-obj-all-sides-simple-sdy1q0
 
+Two sided simple https://codesandbox.io/s/anim-3d-obj-2-sides-simple-9wognm
 
+90 degree wobble on X axis https://codesandbox.io/s/anim-3d-obj-wobblex-08mxqe
+
+speed wobble(y) 3 sides https://codesandbox.io/s/anim-3d-obj-3-sides-wobble-y-axis-dceqdp
 
 ## Authors
 
